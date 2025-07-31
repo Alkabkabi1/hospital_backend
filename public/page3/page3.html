@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الأنظمة والخدمات الإلكترونية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- تضمين Font Awesome للأيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="page3.css">
+</head>
+<body>
+
+  <!-- ✅ الهيدر -->
+  <header>
+   <div class="logo">
+    <img src="/icon/SB.png" alt="شعار المستشفى">
+    <span>مستشفى الملك عبد العزيز بمكة<br>King Abdulaziz Hospital</span>
+  </div>
+    <div class="header-left">
+      <button class="lang-btn" onclick="toggleLanguage()">
+        <i class="fas fa-globe"></i> <span id="lang-text">عربي</span>
+      </button>
+      <a href="/home/home.html" class="back-arrow" title="العودة للصفحة الرئيسية">←</a>
+    </div>
+  </header>
+
+  <!-- ✅ المحتوى -->
+  <div class="container">
+    <h1 data-key="emp_services_title">الأنظمة والخدمات الإلكترونية</h1>
+    <p class="subtitle" data-key="emp_services_subtitle">من الخدمات الإدارية والتشغيلية لتسهيل عملك اليومي</p>
+
+    <div class="grid">
+
+      <!-- بطاقات الخدمات -->
+      <div class="card">
+        <div class="card-icon">📄</div>
+        <h3 data-key="service_cert">نظام الشهادات</h3>
+        <p data-key="service_cert_desc">استعراض طلبات شهادات إدارية أو تدريبية</p>
+        <a href="certificate-system.html" class="btn" data-key="service_enter">دخول</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔧</div>
+        <h3 data-key="service_support">الدعم الفني</h3>
+        <p data-key="service_support_desc">تقديم بلاغات صيانة الأجهزة والأنظمة</p>
+        <a href="support-system.html" class="btn" data-key="service_enter">دخول</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🧪</div>
+        <h3 data-key="service_quality">نظام الجودة</h3>
+        <p data-key="service_quality_desc">متابعة مؤشرات الجودة وتقارير التحسين</p>
+        <a href="quality-system.html" class="btn" data-key="service_enter">دخول</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📚</div>
+        <h3 data-key="service_policy">مكتبة السياسات</h3>
+        <p data-key="service_policy_desc">الوصول إلى السياسات التنظيمية والإدارية للمستشفى</p>
+        <a href="policy-library.html" class="btn" data-key="service_enter">دخول</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📝</div>
+        <h3 data-key="service_eval">نظام التقييم</h3>
+        <p data-key="service_eval_desc">تعبئة استبيانات تقييم الأداء والرضا</p>
+        <a href="evaluation-system.html" class="btn" data-key="service_enter">دخول</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">⏰</div>
+        <h3 data-key="service_hours">فترات العمل</h3>
+        <p data-key="service_hours_desc">معرفة الجداول الزمنية وفترات الدوام</p>
+        <a href="work-schedule.html" class="btn" data-key="service_enter">دخول</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ✅ الفوتر -->
+  <footer>
+    <h4 data-key="footer_copy">جميع الحقوق محفوظة © 2027 الإدارة التنفذية للصحة الرقمية في مستشفى الملك عبد العزيز</h4>
+    <h5 data-key="footer_supervisor">م. هاني مياجان</h5>
+  </footer>
+
+  <script src="page3.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+{
+  "ar": {
+    "page_title": "السياسات العامة للمستشفى",
+    "hospital_name_ar": "مستشفى الملك عبد العزيز بمكة",
+    "hospital_name_en": "King Abdulaziz Hospital",
+    "lang_btn": "عربي",
+    "back_home": "العودة",
+    "filter_title": "تصفية",
+    "filter_all": "📁 الكل",
+    "filter_admin": "🏢 إدارية",
+    "filter_medical": "🩺 طبية",
+
+    "card1_title": "سياسة الأمن و السلامة",
+    "card1_desc": "تضمن هذه السياسة الإجراءات الأمنية التي تحافظ على سلامة المرضى والزوار والموظفين داخل بيئة المستشفى.",
+    "card1_tag": "إدارية",
+
+    "card2_title": "سياسة رعاية المرضى",
+    "card2_desc": "تشرح السياسة كيفية تقديم الرعاية الطبية وفق المعايير العالمية للمرضى داخل المستشفى وتوفير بيئة علاجية إنسانية.",
+    "card2_tag": "طبية",
+
+    "card3_title": "سياسة الموارد البشرية",
+    "card3_desc": "قواعد وإجراءات إدارة الموظفين",
+    "card3_tag": "إدارية",
+
+    "card4_title": "سياسة الجودة الشاملة",
+    "card4_desc": "ضمان الجودة في جميع الخدمات",
+    "card4_tag": "إدارية",
+
+    "card5_title": "سياسة الطوارئ والأزمات",
+    "card5_desc": "إجراءات التعامل مع حالات الطوارئ",
+    "card5_tag": "طبية",
+
+    "card6_title": "سياسة الخدمات الطبية",
+    "card6_desc": "معايير تقديم الخدمات الطبية للمرضى",
+    "card6_tag": "طبية",
+
+    "card_view": "عرض السياسة",
+
+    "footer_text": "جميع الحقوق محفوظة © 2027 الادارة التنفذية للصحة الرقمية في مستشفى الملك عبد العزيز",
+    "footer_supervisor": "م.هاني مياجان"
+  },
+
+  "en": {
+    "page_title": "Hospital General Policies",
+    "hospital_name_ar": "King Abdulaziz Hospital - Makkah",
+    "hospital_name_en": "King Abdulaziz Hospital",
+    "lang_btn": "English",
+    "back_home": "Back",
+    "filter_title": "Filter",
+    "filter_all": "📁 All",
+    "filter_admin": "🏢 Administrative",
+    "filter_medical": "🩺 Medical",
+
+    "card1_title": "Safety & Security Policy",
+    "card1_desc": "This policy outlines the security procedures to maintain safety for patients, visitors, and staff.",
+    "card1_tag": "Administrative",
+
+    "card2_title": "Patient Care Policy",
+    "card2_desc": "Describes how to provide medical care according to international standards in a humane environment.",
+    "card2_tag": "Medical",
+
+    "card3_title": "Human Resources Policy",
+    "card3_desc": "Rules and procedures for managing hospital staff.",
+    "card3_tag": "Administrative",
+
+    "card4_title": "Total Quality Policy",
+    "card4_desc": "Ensuring quality across all services.",
+    "card4_tag": "Administrative",
+
+    "card5_title": "Emergency & Crisis Policy",
+    "card5_desc": "Procedures for handling emergencies.",
+    "card5_tag": "Medical",
+
+    "card6_title": "Medical Services Policy",
+    "card6_desc": "Standards for providing medical services to patients.",
+    "card6_tag": "Medical",
+
+    "card_view": "View Policy",
+
+    "footer_text": "All rights reserved © 2027 Digital Health Admin - King Abdulaziz Hospital",
+    "footer_supervisor": "Eng. Hani Miyajan"
+  }
+}

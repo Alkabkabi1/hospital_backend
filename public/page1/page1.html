@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-key="about_title">عن المستشفى - King Abdulaziz Hospital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="page1.css">
+</head>
+
+<body>
+
+  <!-- الهيدر -->
+  <header class="main-header">
+    <div class="logo">
+      <img src="/icon/SB.png" alt="شعار المستشفى">
+      <span>مستشفى الملك عبد العزيز بمكة<br><small>King Abdulaziz Hospital</small></span>
+    </div>
+
+   <nav class="nav">
+  <ul class="dropdown">
+    <li><a href="/home/home.html" data-key="nav_home">الرئيسية</a></li>
+    <li>
+      <a href="/page1/page1.html" data-key="nav_about">عن المستشفى ▾</a>
+      <ul class="dropdown-m">
+        <li><a href="/page2/page2.html" data-key="nav_doctors">الاطباء</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" data-key="nav_services">خدمات الالكترونية ▾</a>
+      <ul class="dropdown-m">
+        <li><a href="/page3/page3.html" data-key="nav_emp_services">خدمات الموظفين</a></li>
+        <li><a href="/page4/page4.html" data-key="nav_pat_services">خدمات المرضى</a></li>
+      </ul>
+    </li>
+    <li><a href="/policies/policies.html" data-key="nav_policies">السياسات</a></li>
+    <li><a href="/communication/communication.html" data-key="nav_contact">تواصل معنا</a></li>
+  </ul>
+</nav>
+    
+    <div class="header-actions">
+      <button class="lang-btn" onclick="toggleLanguage()">
+        <i class="fas fa-globe"></i> عربي</button>
+      <button class="login-btn" onclick="window.location.href='/Login/Login.html'" data-key="login_btn">تسجيل الدخول</button>
+<button class="signup-btn" onclick="window.location.href='/signup/signup.html'" data-key="signup_btn">إنشاء حساب</button>
+
+    </div>
+  </header>
+
+  <!-- البطل -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2 data-key="about_title">نبذة عن المستشفى</h2>
+      <p data-key="about_desc1">منشأة صحية غير ربحية بسعة 300 سرير...</p>
+      <p data-key="about_desc2">معتمدة من قِبَل المركز السعودي لاعتماد المنشآت...</p>
+    </div>
+    <img src="/icon/img1.jpg" alt="مبنى المستشفى">
+  </section>
+
+  <!-- الرؤية والرسالة -->
+  <section class="vision-mission">
+    <div class="vision-box">
+      <img src="/icon/r.png" alt="الرؤية">
+      <h4 data-key="vision_title">رؤيتنا</h4>
+      <p data-key="vision_text">أن نكون روادًا في تقديم رعاية صحية...</p>
+    </div>
+    <div class="vision-box">
+      <img src="/icon/rs.png" alt="الرسالة">
+      <h4 data-key="mission_title">رسالتنا</h4>
+      <p data-key="mission_text">تقديم خدمات طبية عالية الجودة...</p>
+    </div>
+  </section>
+
+  <!-- الفريق -->
+  <section class="team-section">
+    <h2 id="teamTitle" data-key="team_title">إدارة المستشفى</h2>
+    <div class="slider-container">
+      <button class="nav-btn left" onclick="prevTeamGroup()">⬅</button>
+      <div class="slides" id="teamSlides">
+       <!-- المجموعة 1 -->
+<div class="slide">
+  <div class="department-card"><img src="/icon/ww.png" alt=""><h4 data-key="team_ceo">د. المدير التنفيذي</h4></div>
+  <div class="department-card"><img src="/icon/ww.png" alt=""><h4 data-key="team_medical">د. المدير الطبي</h4></div>
+  <div class="department-card"><img src="/icon/ww.png" alt=""><h4 data-key="team_admin">د. مدير المستشفى</h4></div>
+</div>
+<!-- المجموعة 2 -->
+<div class="slide">
+  <div class="department-card"><img src="/icon/ww.png" alt=""><h4 data-key="team_assist1">د. مساعد أول</h4></div>
+  <div class="department-card"><img src="/icon/ww.png" alt=""><h4 data-key="team_assist2">د. مساعد ثاني</h4></div>
+  <div class="department-card"><img src="/icon/ww.png" alt=""><h4 data-key="team_assist3">د. مساعد ثالث</h4></div>
+</div>
+<!-- المجموعة 3 -->
+<div class="slide">
+  <div class="department-card"><img src="/icon/ww.png" alt=""><h4 data-key="team_head">د. رئيس الإدارة</h4></div>
+  <div class="department-card"><img src="/icon/ww.png" alt=""><h4 data-key="team_support">د. مساعد الإدارة</h4></div>
+  <div class="department-card"><img src="/icon/ww.png" alt=""><h4 data-key="team_member">د. عضو الإدارة</h4></div>
+</div>
+
+      </div>
+      <button class="nav-btn right" onclick="nextTeamGroup()">➡</button>
+    </div>
+  </section>
+
+  <!-- الأقسام -->
+  <section class="departments-section">
+    <h2 data-key="departments_title">أقسام المستشفى</h2>
+    <div class="departments-wrapper">
+      <button class="nav-btn right" onclick="slideRight()">➡</button>
+      <div class="departments-slider" id="deptSlider">
+        <div class="department-card"><h4 data-key="dept_internal">الباطنة</h4><p data-key="dept_internal_desc">رعاية شاملة للأمراض الداخلية</p></div>
+        <div class="department-card"><h4 data-key="dept_neuro">الأعصاب</h4><p data-key="dept_neuro_desc">علاج أمراض الجهاز العصبي</p></div>
+        <div class="department-card"><h4 data-key="dept_heart">القلب</h4><p data-key="dept_heart_desc">رعاية متخصصة لصحة القلب</p></div>
+        <div class="department-card"><h4 data-key="dept_bones">العظام</h4><p data-key="dept_bones_desc">علاج مشاكل العظام والمفاصل</p></div>
+        <div class="department-card"><h4 data-key="dept_dental">الأسنان</h4><p data-key="dept_dental_desc">رعاية شاملة للأسنان</p></div>
+        <div class="department-card"><h4 data-key="dept_emergency">الطوارئ</h4><p data-key="dept_emergency_desc">خدمة طوارئ 24 ساعة</p></div>
+        <div class="department-card"><h4 data-key="dept_lab">المختبرات</h4><p data-key="dept_lab_desc">تحاليل دقيقة باستخدام أحدث التقنيات</p></div>
+        <div class="department-card"><h4 data-key="dept_mental">الصحة النفسية</h4><p data-key="dept_mental_desc">رعاية نفسية متكاملة</p></div>
+      </div>
+      <button class="nav-btn left" onclick="slideLeft()">⬅</button>
+    </div>
+  </section>
+<!-- الفوتر -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-cols">
+    
+      <div class="footer-col">
+        <h4 data-key="footer_links">روابط رسمية</h4>
+        <ul>
+          <li><a href="https://www.moh.gov.sa/Pages/default.aspx" data-key="footer_moh">وزارة الصحة</a></li>
+          <li><a href="https://www.makkahhc.sa/" data-key="footer_cluster">تجمع مكة المكرمة الصحي</a></li>
+          <li><a href="https://scfhs.org.sa/ar" data-key="footer_scfhs">هيئة التخصصات الصحية</a></li>
+          <li><a href="https://www.sfda.gov.sa/" data-key="footer_sfda">هيئة الغذاء والدواء</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-key="footer_contact">معلومات الاتصال</h4>
+        <p data-key="footer_phone">الهاتف: 012-5442400</p>
+        <p data-key="footer_email">البريد: info@kaah.med.sa</p>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-key="footer_follow">تابعونا</h4>
+        <div class="social-icons">
+          <!-- ممكن إضافة أيقونات التواصل هنا -->
+ <a href="https://x.com/kaahmak?lang=ar"><img alt="X" src="/icon/x.png"/></a>
+<a href="#"><img alt="Snapchat" src="/icon/s.png"/></a>
+<a href="#"><img alt="YouTube" src="/icon/y.png"/></a>
+<a href="#"><img alt="Instagram" src="/icon/i.png"/></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <h4 data-key="footer_copy">جميع الحقوق محفوظة © 2027 الادارة التنفذية للصحة الرقمية في مستشفى الملك عبد العزيز</h4>
+    <h5 data-key="footer_supervisor">م.هاني مياجان</h5>
+  </div>
+</footer>
+
+
+  <script src="page1.js"></script>
+</body>
+</html>

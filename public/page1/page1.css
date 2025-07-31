@@ -1,0 +1,371 @@
+ body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      direction: rtl;
+    }
+
+    header {
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    /* ==========  الهيدر ========== */
+  .main-header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 10px 10px 10px 50px;
+    padding-right: 50px ;
+  }
+  
+  .main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding:0;
+  }
+  
+  .logo img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .logo span {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .header-logo small {
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+  
+  /* قائمة التنقل */
+  
+
+.nav ul li{
+    display: inline-block;
+    position: relative;
+}
+
+  .nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;;
+    padding: 20px 25px;
+  }
+  
+  .nav ul li a:hover {
+    color: #007B8F;
+  }
+  
+  /* القوائم المنسدلة */
+    ul.dropdown {
+      list-style: none;
+      background:#ffffff ;
+      padding: 0;
+    }
+
+
+    .nav ul li a {
+      display:block;
+      margin: 0;
+      padding: 15px 15px;
+      color: #333;
+      text-decoration:none;
+      text-align:center;
+      font-size: 16px;
+      border-radius: 10px;
+    }
+
+    ul li ul.dropdown-m li {
+      display:block;
+    }
+
+    ul li ul.dropdown-m {
+      display:none;
+      padding:0;
+      position: absolute;
+      width: 100%;
+      background:#c7c6c6;
+      z-index: 999;
+    }
+
+    ul.dropdown li a:hover {
+      background: #aaa;
+    }
+
+    ul.dropdown li:hover ul.dropdown-m {
+      display: block;
+      border-radius: 10px;
+    }
+  
+  /* أزرار اللغة والحساب */
+  .header-actions button {
+    margin-right: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2c4952;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .header-actions .lang-btn {
+    background-color: #2c4952;
+    color: white;
+  }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      padding-left: 30px;
+    }
+
+    .hero-text h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .hero img {
+      width: 400px;
+      border-radius: 10px;
+      max-width: 100%;
+    }
+
+    .vision-mission {
+      background-color: #f4f4f4;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .vision-box {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .vision-box h4 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .vision-box p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .team-section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .team-section h2 {
+      margin-bottom: 30px;
+    }
+
+    .team-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .team-card {
+      width: 200px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .team-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+    .departments-section {
+      background-color: #f1f1f1;
+      padding: 40px 20px;
+    }
+
+    .departments-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .departments-wrapper {
+      position: relative;
+      overflow: hidden;
+      padding: 0 40px;
+    }
+
+    .departments-slider {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 20px 0;
+      scrollbar-width: none;
+    }
+
+    .departments-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .department-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+    .department-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      min-width: 250px;
+      max-width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .nav-btn.left {
+      left: 10px;
+    }
+
+    .nav-btn.right {
+      right: 10px;
+    }
+
+    .footer {
+    background-color: #1f3d47;
+    color: white;
+    padding: 40px 50px;
+    display: grid;
+  }
+
+    .footer ul{
+      padding: 0;
+    }
+  
+  .footer-cols {
+    display: flex;
+justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .footer-col h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+  }
+  
+  .footer-col ul li a {
+    text-decoration: none;
+    color: #ccc;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .footer-col p {
+    color: #ccc;
+    font-size: 14px;
+  }
+  
+  .social-icons img {
+    width: 30px;
+    margin-left: 10px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #aaa;
+  }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+    }

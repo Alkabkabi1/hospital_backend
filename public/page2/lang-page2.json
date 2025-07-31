@@ -1,0 +1,111 @@
+{
+  "ar": {
+    "doctors_title": "أبرز الأطباء",
+    "doctors_subtitle": "من الأطباء المتخصصين برعايتكم الصحية",
+
+    "doctor1_name": "د. أحمد",
+    "doctor1_title": "استشاري جراحة القلب",
+    "doctor1_desc": "خبرة 15 عامًا في جراحة القلب المفتوح وشفيرة القلب",
+
+    "doctor2_name": "د. سارة",
+    "doctor2_title": "استشارية طب الأطفال",
+    "doctor2_desc": "متخصصة في حديثي الولادة مع خبرة 12 عامًا",
+
+    "doctor3_name": "د. خالد",
+    "doctor3_title": "استشاري الأمراض الباطنية",
+    "doctor3_desc": "حاصل على البورد الأمريكي في الطب الباطني",
+
+    "doctor4_name": "د. ناصر",
+    "doctor4_title": "استشاري جراحة مخ و أعصاب",
+    "doctor4_desc": "خبرة 17 عامًا",
+
+    "doctor5_name": "د. مريم",
+    "doctor5_title": "استشارية تغذية",
+    "doctor5_desc": "متخصصة في التغذية الصحية مع خبرة 13 عامًا",
+
+    "doctor6_name": "د. أنس",
+    "doctor6_title": "استشاري طب أسنان",
+    "doctor6_desc": "حاصل على البورد الأمريكي في طب الأسنان",
+
+    "more_btn": "المزيد",
+
+    "nav_home": "الرئيسية",
+    "nav_about": "عن المستشفى ▾",
+    "nav_doctors": "الأطباء",
+    "nav_services": "الخدمات الإلكترونية ▾",
+    "nav_emp_services": "خدمات الموظفين",
+    "nav_pat_services": "خدمات المرضى",
+    "nav_policies": "السياسات",
+    "nav_contact": "تواصل معنا",
+
+    "login_btn": "تسجيل الدخول",
+    "signup_btn": "إنشاء حساب",
+
+    "footer_links": "روابط رسمية",
+    "footer_moh": "وزارة الصحة",
+    "footer_cluster": "تجمع مكة المكرمة الصحي",
+    "footer_scfhs": "هيئة التخصصات الصحية",
+    "footer_sfda": "هيئة الغذاء والدواء",
+    "footer_contact": "معلومات الاتصال",
+    "footer_phone": "الهاتف: 012-5442400",
+    "footer_email": "البريد: info@kaah.med.sa",
+    "footer_follow": "تابعونا",
+    "footer_copy": "جميع الحقوق محفوظة © 2027 الإدارة التنفذية للصحة الرقمية في مستشفى الملك عبد العزيز",
+    "footer_supervisor": "م. هاني مياجان"
+  },
+
+  "en": {
+    "doctors_title": "Top Doctors",
+    "doctors_subtitle": "Specialized doctors dedicated to your care",
+
+    "doctor1_name": "Dr. Ahmed",
+    "doctor1_title": "Consultant Cardiac Surgeon",
+    "doctor1_desc": "15 years of experience in open heart surgery and cardiac care",
+
+    "doctor2_name": "Dr. Sarah",
+    "doctor2_title": "Pediatric Consultant",
+    "doctor2_desc": "Specialized in neonatology with 12 years of experience",
+
+    "doctor3_name": "Dr. Khaled",
+    "doctor3_title": "Internal Medicine Consultant",
+    "doctor3_desc": "Board certified in Internal Medicine (US)",
+
+    "doctor4_name": "Dr. Nasser",
+    "doctor4_title": "Neurosurgery Consultant",
+    "doctor4_desc": "17 years of experience",
+
+    "doctor5_name": "Dr. Mariam",
+    "doctor5_title": "Nutrition Consultant",
+    "doctor5_desc": "Expert in healthy nutrition with 13 years of experience",
+
+    "doctor6_name": "Dr. Anas",
+    "doctor6_title": "Dental Consultant",
+    "doctor6_desc": "Board-certified in Dental Medicine",
+
+    "more_btn": "More",
+
+    "nav_home": "Home",
+    "nav_about": "About ▾",
+    "nav_doctors": "Doctors",
+    "nav_services": "E-Services ▾",
+    "nav_emp_services": "Employee Services",
+    "nav_pat_services": "Patient Services",
+    "nav_policies": "Policies",
+    "nav_contact": "Contact Us",
+
+    "login_btn": "Login",
+    "signup_btn": "Sign Up",
+
+    "footer_links": "Official Links",
+    "footer_moh": "Ministry of Health",
+    "footer_cluster": "Makkah Health Cluster",
+    "footer_scfhs": "SCFHS",
+    "footer_sfda": "SFDA",
+    "footer_contact": "Contact Information",
+    "footer_phone": "Phone: 012-5442400",
+    "footer_email": "Email: info@kaah.med.sa",
+    "footer_follow": "Follow Us",
+    "footer_copy": "All rights reserved © 2027 Digital Health Department - King Abdulaziz Hospital",
+    "footer_supervisor": "Eng. Hani Miyajan"
+  }
+}

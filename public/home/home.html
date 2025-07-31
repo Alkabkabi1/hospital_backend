@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title> الرئيسية مستشفى الملك عبد العزيز - King Abdulaziz Hospital</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="home.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- الهيدر -->
+<header class="main-header">
+<div class="logo">
+<img alt="شعار المستشفى" src="/icon/SB.png"/>
+<span>مستشفى الملك عبد العزيز بمكة<br/><small>King Abdulaziz Hospital</small></span>
+</div>
+<!--قائمة المنسدله-->
+<nav class="nav">
+<ul class="dropdown">
+<li><a data-key="home" href="/home/home.html">الرئيسية</a></li>
+<li><a data-key="about_hospital_arrow" href="/page1/page1.html">عن المستشفى ▾ </a>
+<ul class="dropdown-m">
+<li><a data-key="doctors" href="/page2/page2.html">الاطباء</a></li>
+</ul>
+</li>
+<li>
+<a data-key="electronic_services" href="#">خدمات الالكترونية ▾ </a>
+<ul class="dropdown-m">
+<li><a data-key="staff_services" href="/page3/page3.html">خدمات الموظفين</a></li>
+<li><a data-key="patient_services" href="/page4/page4.html">خدمات المرضى</a></li>
+</ul>
+</li>
+<li><a data-key="policies" href="/policies/policies.html">السياسات</a></li>
+<li><a data-key="contact_us" href="/communication/communication.html">تواصل معنا</a></li>
+</ul>
+</nav>
+<div class="header-actions">
+<button class="lang-btn" onclick="toggleLanguage()">
+<i class="fas fa-globe"></i> عربي</button>
+<button class="login-btn" data-key="login" onclick="window.location.href='/Login/Login.html'">تسجيل الدخول</button>
+<button class="signup-btn" data-key="signup" onclick="window.location.href='/signup/signup.html'">إنشاء حساب</button>
+</div>
+</header>
+<!--   شاشة العرض  -->
+<section class="hero-slider">
+<div class="hero-slide active" style="background-image: url('/icon/img1-1.png');">
+<div class="hero-content">
+<h1 data-key="welcome">مرحبًا بكم في مستشفى الملك عبد العزيز</h1>
+<p data-key="global_standards">نقدم رعاية صحية بمعايير عالمية</p>
+</div>
+</div>
+<div class="hero-slide" style="background-image: url('/icon/خلفية\ سوداء1.jpg');">
+<div class="hero-content">
+<h1 data-key="health_first">نهتم بصحتك أولاً</h1>
+</div>
+</div>
+<div class="hero-slide" style="background-image: url('/icon/خلفية\ سوداء1.jpg');">
+<div class="hero-content">
+<h1 data-key="skilled_doctors">أطباء ذو كفاءة عالية</h1>
+<p data-key="always_serving">في خدمتك دائمًا</p>
+</div>
+</div>
+<div class="slider-dots" id="dots"></div>
+</section>
+<!-- الاخبار-->
+<section class="news-slider-section">
+<div class="container">
+<h2 class="section-title" data-key="latest_news">أحدث اخبار المستشفى</h2>
+<div class="news-slider" id="newsSlider">
+<!-- شريحة خبر -->
+<div class="news-slide active">
+<div class="news-text">
+<p data-key="news1">
+            إزالة حصوات ناجحة خلال موسم الحج<br/>
+            في 8 يونيو 2025 (12 ذو الحجة 1446هـ)، قام فريق طبي في المستشفى بإزالة حصوتين من حاج أثناء تأدية مناسك الحج، مما مكنه من إتمام مناسك الحج بنجاح. تم ذلك ضمن نظام الرعاية العاجلة المعتمد في التجمع الصحي بمكة.
+          </p>
+<button class="read-btn" data-key="read_more">اقرأ المزيد</button>
+</div>
+<div class="news-image">
+<img alt="خبر 1" src="/icon/img1.jpg"/>
+</div>
+</div>
+<!-- يمكنك تكرار هذا القسم لأخبار إضافية -->
+<div class="news-slide">
+<div class="news-text">
+<p data-key="news2">
+      تفعيل المواعيد الافتراضية<br/>
+     منذ يومين، أعلن تجمع مكة المكرمة الصحي أن 36,169 مستفيدًا قد أجروا مواعيد افتراضية مع مستشفى الملك عبد العزيز بمكة، كجزء من جهود تعزيز الصحة الرقمية والخدمات عن بُعد 
+    </p>
+<button class="read-btn" data-key="read_more">اقرأ المزيد</button>
+</div>
+<div class="news-image">
+<img alt="  المواعيد الافتراضية" src="/icon/news2.png"/>
+</div>
+</div>
+<!-- يمكنك تكرار هذا القسم لأخبار إضافية -->
+</div>
+<div class="news-dots" id="newsDots"></div>
+</div>
+</section>
+<!--  الوصول السريع -->
+<section class="quick-access">
+<div class="container">
+<h2 class="section-title" data-key="quick_access">الوصول السريع</h2>
+<div class="access-cards">
+<!-- بطاقة 1 -->
+<div class="access-card">
+<img alt="خدمات الموظفين" src="/icon/img2.png"/>
+<h3 data-key="staff_services">خدمات الموظفين</h3>
+<button class="go-btn" data-key="go" onclick="window.location.href='page3/page3.html'">اذهب</button>
+</div>
+<!-- بطاقة 2 -->
+<div class="access-card">
+<img alt="خدمات المرضى" src="/icon/hmg3.png"/>
+<h3 data-key="patient_services">خدمات المرضى</h3>
+<button class="go-btn" data-key="go" onclick="window.location.href='page4/page4.html'">اذهب</button>
+</div>
+<!-- بطاقة 3 -->
+<div class="access-card">
+<img alt="التدريب والتعليم" src="/icon/img4.png"/>
+<h3 data-key="training_education">التدريب والتعليم</h3>
+<button class="go-btn" data-key="go" onclick="window.location.href=''">اذهب</button>
+</div>
+</div>
+</div>
+</section>
+<!-- إحصائيات -->
+<section class="stats">
+<div class="container">
+<div class="stats-cards">
+<div class="stat-card">
+<div class="icon"><i class="fas fa-procedures"></i></div>
+<div class="number">500+</div>
+<div class="label" data-key="beds">الأسرة</div>
+</div>
+<div class="stat-card">
+<div class="icon"><i class="fas fa-user-md"></i></div>
+<div class="number">200+</div>
+<div class="label" data-key="doctors_count">الأطباء</div>
+</div>
+<div class="stat-card">
+<div class="icon"><i class="fas fa-chart-line"></i></div>
+<div class="number">50+</div>
+<div class="label" data-key="departments">الأقسام</div>
+</div>
+</div>
+</div>
+</section>
+<!-- الفوتر -->
+<footer class="footer">
+<div class="container">
+<div class="footer-cols">
+<div class="footer-col">
+<h4 data-key="official_links">روابط رسمية</h4>
+<ul class="footer">
+<li><a data-key="moh" href="https://www.moh.gov.sa/Pages/default.aspx">وزارة الصحة</a></li>
+<li><a data-key="makkah_health" href="https://www.makkahhc.sa/"> تجمع مكة المكرمة الصحي</a></li>
+<li><a data-key="scfhs" href="https://scfhs.org.sa/ar">هيئة التخصصات الصحية</a></li>
+<li><a data-key="sfda" href="https://www.sfda.gov.sa/">هيئة الغذاء والدواء</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4 data-key="contact_info">معلومات الاتصال</h4>
+<p data-key="phone">الهاتف: 012-5442400</p>
+<p data-key="email">البريد: info@kaah.med.sa</p>
+</div>
+<div class="footer-col">
+<h4 data-key="follow_us">تابعونا</h4>
+<div class="social-icons">
+<a href="https://x.com/kaahmak?lang=ar"><img alt="X" src="/icon/x.png"/></a>
+<a href="#"><img alt="Snapchat" src="/icon/s.png"/></a>
+<a href="#"><img alt="YouTube" src="/icon/y.png"/></a>
+<a href="#"><img alt="Instagram" src="/icon/i.png"/></a>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<h4 data-="" data-key="rights_reserved_hospital"> جميع الحقوق محفوظة © 2027 الادارة التنفذية للصحة الرقمية في مستشفى الملك عبد العزيز </h4>
+<h5 data-key="hany_miyajan">م.هاني مياجان</h5>
+</div>
+</footer>
+<script src="home.js"></script>
+</body>
+</html>
+

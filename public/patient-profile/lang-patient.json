@@ -1,0 +1,42 @@
+{
+  "ar": {
+    "welcome_heading": "👋 مرحبًا بك",
+    "welcome_subtext": "هذا هو ملفك الشخصي. يمكنك تعديل بياناتك عند الحاجة.",
+
+    "personal_info": "معلومات شخصية",
+    "full_name": "الاسم الكامل",
+    "birth_date": "تاريخ الميلاد",
+    "blood_type": "فصيلة الدم",
+    "address": "العنوان",
+    "email": "البريد الإلكتروني",
+    "mrn": "رقم الملف الطبي",
+    "id_number": "الهوية/الإقامة",
+    "phone": "رقم الجوال",
+    "marital_status": "الحالة الاجتماعية",
+"nav_home": "الرئيسية",
+    "notifications": "الإشعارات",
+    "logout": "تسجيل خروج",
+    "edit_btn": "تعديل البيانات",
+    "save_btn": "حفظ البيانات"
+  },
+  "en": {
+    "welcome_heading": "👋 Welcome",
+    "welcome_subtext": "This is your profile. You can edit your information as needed.",
+
+    "personal_info": "Personal Information",
+    "full_name": "Full Name",
+    "birth_date": "Date of Birth",
+    "blood_type": "Blood Type",
+    "address": "Address",
+    "email": "Email",
+    "mrn": "Medical Record Number",
+    "id_number": "ID/Residence",
+    "phone": "Phone Number",
+    "marital_status": "Marital Status",
+"nav_home": "Home",
+    "notifications": "Notifications",
+    "logout": "Logout",
+    "edit_btn": "Edit Info",
+    "save_btn": "Save Info"
+  }
+}

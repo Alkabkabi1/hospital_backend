@@ -1,0 +1,32 @@
+{
+  "ar": {
+    "login_title": "تسجيل دخول",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "login_button": "تسجيل الدخول",
+    "forgot_password": "نسيت كلمة المرور؟",
+    "no_account": "ليس لديك حساب؟",
+    "signup": "إنشاء حساب",
+    "privacy_policy": "سياسة الخصوصية",
+    "contact_us": "اتصل بنا",
+    "help": "المساعدة",
+    "rights_reserved": "جميع الحقوق محفوظة © 2027 الادارة التنفذية للصحة الرقمية في مستشفى الملك عبد العزيز",
+    "hany_miyajan": "م.هاني مياجان",
+    "home": "الرئيسية"
+  },
+  "en": {
+    "login_title": "Login",
+    "email": "Email Address",
+    "password": "Password",
+    "login_button": "Login",
+    "forgot_password": "Forgot Password?",
+    "no_account": "Don't have an account?",
+    "signup": "Sign Up",
+    "privacy_policy": "Privacy Policy",
+    "contact_us": "Contact Us",
+    "help": "Help",
+    "rights_reserved": "All rights reserved © 2027 Digital Health Administration at King Abdulaziz Hospital",
+    "hany_miyajan": "Eng. Hani Miyajan",
+    "home": "Home"
+  }
+}

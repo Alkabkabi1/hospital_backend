@@ -1,0 +1,447 @@
+body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      direction: rtl;
+    }
+
+    header {
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    /* ==========  الهيدر ========== */
+  .main-header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 10px 10px 10px 50px;
+    padding-right: 50px ;
+  }
+  
+  .main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding:0;
+  }
+  
+  .logo img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .logo span {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .header-logo small {
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+  
+  /* قائمة التنقل */
+  
+
+.nav ul li{
+    display: inline-block;
+    position: relative;
+}
+
+  .nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;;
+    padding: 20px 25px;
+  }
+  
+  .nav ul li a:hover {
+    color: #007B8F;
+  }
+  
+  /* القوائم المنسدلة */
+    ul.dropdown {
+      list-style: none;
+      background:#ffffff ;
+      padding: 0;
+    }
+
+
+    .nav ul li a {
+      display:block;
+      margin: 0;
+      padding: 15px 15px;
+      color: #333;
+      text-decoration:none;
+      text-align:center;
+      font-size: 16px;
+      border-radius: 10px;
+    }
+
+    ul li ul.dropdown-m li {
+      display:block;
+    }
+
+    ul li ul.dropdown-m {
+      display:none;
+      padding:0;
+      position: absolute;
+      width: 100%;
+      background:#c7c6c6;
+      z-index: 999;
+    }
+
+    ul.dropdown li a:hover {
+      background: #aaa;
+    }
+
+    ul.dropdown li:hover ul.dropdown-m {
+      display: block;
+      border-radius: 10px;
+    }
+  
+  /* أزرار اللغة والحساب */
+  .header-actions button {
+    margin-right: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2c4952;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .header-actions .lang-btn {
+    background-color: #2c4952;
+    color: white;
+  }
+
+  /* ✅   شاشة عرض */
+
+  .hero-slider {
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+}
+.hero-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+.hero-content h1 {
+  font-size: 2.5rem;
+}
+.hero-content p {
+  font-size: 1.2rem;
+}
+.slider-dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+}
+.slider-dots span {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background: #fff;
+  opacity: 0.4;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.slider-dots span.active {
+  opacity: 1;
+  background: #00A2B8;
+}
+
+/* ✅   اخبار */
+
+.news-slider-section {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 26px;
+}
+
+.news-slider {
+  position: relative;
+}
+
+.news-slide {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 0 40px; /* ✅ إضافة هوامش داخلية للجانبين */
+  flex-direction: row-reverse; /* ✅ لدعم الاتجاه من اليمين لليسار */
+}
+
+.news-slide.active {
+  display: flex;
+}
+
+.news-text {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+  text-align: right;
+  padding-right: 20px; /* ✅ مسافة من اليمين */
+}
+
+.news-text .read-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007B8F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.news-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.news-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.news-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.news-dots span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.news-dots span.active {
+  background-color: #007B8F;
+  opacity: 1;
+}
+
+/* ✅ تحسين العرض على الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .news-slide {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .news-text {
+    padding-right: 0;
+  }
+}
+
+
+/* ✅   الوصول السريع */
+.quick-access {
+  padding: 50px 0;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.access-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.access-card {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.access-card:hover {
+  transform: translateY(-5px);
+}
+
+.access-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.access-card h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.go-btn {
+  padding: 10px 20px;
+  background-color: #007B8F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ✅   الاحصائيات */
+
+.stats {
+  background-color: #f0f0f0;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.stats-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.stat-card {
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 220px;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card .icon {
+  font-size: 32px;
+  color: #007B8F;
+  margin-bottom: 15px;
+}
+
+.stat-card .number {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.stat-card .label {
+  font-size: 16px;
+  color: #555;
+}
+
+/* ✅ فوتر    */
+
+    .footer {
+    background-color: #1f3d47;
+    color: white;
+    padding: 40px 50px;
+    display: grid;
+  }
+
+    .footer ul{
+      padding: 0;
+    }
+  
+  .footer-cols {
+    display: flex;
+justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .footer-col h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+  }
+  
+  .footer-col ul li a {
+    text-decoration: none;
+    color: #ccc;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .footer-col p {
+    color: #ccc;
+    font-size: 14px;
+  }
+  
+  .social-icons img {
+    width: 30px;
+    margin-left: 10px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #aaa;
+  }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+    }

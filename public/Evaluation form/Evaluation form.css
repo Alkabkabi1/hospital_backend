@@ -1,0 +1,125 @@
+body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+
+    header {
+      position: relative;
+      background-color: #fff;
+      padding: 1rem;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    /* مجموعة الزر والسهم */
+    .header-left {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lang-btn {
+      font-size: 1rem;
+      background-color: #2f4553;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .back-arrow {
+      font-size: 1.3rem;
+      text-decoration: none;
+      color: #374151;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+
+    .back-arrow:hover {
+      background: #e2e8f0;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .info-box {
+      background-color: #f1f5f9;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      color: #374151;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    textarea,
+    input[type="text"] {
+      width: 100%;
+      margin-top: 0.3rem;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      margin-top: 0.5rem;
+      padding-right: 1rem;
+    }
+
+    .radio-group input,
+    .checkbox-group input {
+      margin-left: 0.5rem;
+    }
+
+    .submit-btn {
+      margin-top: 2rem;
+      background-color: #2f4553;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background-color: #243843;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 1rem;
+    }

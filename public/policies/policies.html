@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title data-key="page_title">السياسات العامة للمستشفى</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="policies.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="/icon/SB.png" alt="شعار المستشفى">
+    <span>
+      <span >مستشفى الملك عبد العزيز بمكة</span><br>
+      <span >King Abdulaziz Hospital</span>
+    </span>
+  </div>
+  <div class="header-left">
+    <button class="lang-btn" onclick="toggleLanguage()">
+      <i class="fas fa-globe"></i> <span data-key="lang_btn">عربي</span>
+    </button>
+    <a href="/home/home.html" class="back-arrow" title="العودة للصفحة الرئيسية">←</a>
+    
+  </div>
+</header>
+
+<div class="main-content">
+  <aside class="sidebar">
+    <h3 data-key="filter_title">تصفية</h3>
+    <ul id="filterMenu">
+      <li class="active" data-filter="all"><span data-key="filter_all">📁 الكل</span></li>
+      <li data-filter="إدارية"><span data-key="filter_admin">🏢 إدارية</span></li>
+      <li data-filter="طبية"><span data-key="filter_medical">🩺 طبية</span></li>
+    </ul>
+  </aside>
+
+  <div class="cards" id="cardContainer">
+    <div class="card" data-category="إدارية">
+      <div class="icon">📍</div>
+      <h4 data-key="card1_title">سياسة الأمن و السلامة</h4>
+      <p data-key="card1_desc">تضمن هذه السياسة الإجراءات الأمنية التي تحافظ على سلامة المرضى والزوار والموظفين داخل بيئة المستشفى.</p>
+      <div class="tag" data-key="card1_tag">إدارية</div>
+      <div class="tools">
+        <a href="#" class="view-btn" data-key="card1_view">👁️</a>
+        <a href="docs/security.pdf" target="_blank" title="تحميل PDF">📄</a>
+        <a href="https://qr-code.com/security" target="_blank" title="رمز QR">🔳</a>
+      </div>
+    </div>
+
+    <div class="card" data-category="طبية">
+      <div class="icon">🩺</div>
+      <h4 data-key="card2_title">سياسة رعاية المرضى</h4>
+      <p data-key="card2_desc">تشرح السياسة كيفية تقديم الرعاية الطبية وفق المعايير العالمية للمرضى داخل المستشفى وتوفير بيئة علاجية إنسانية.</p>
+      <div class="tag" data-key="card2_tag">طبية</div>
+      <div class="tools">
+        <a href="#" class="view-btn" data-key="card2_view">👁️</a>
+        <a href="docs/patient-care.pdf" target="_blank">📄</a>
+        <a href="https://qr-code.com/patient-care" target="_blank">🔳</a>
+      </div>
+    </div>
+
+    <div class="card" data-category="إدارية">
+      <div class="icon">👨‍💼</div>
+      <h4 data-key="card3_title">سياسة الموارد البشرية</h4>
+      <p data-key="card3_desc">قواعد وإجراءات إدارة الموظفين</p>
+      <div class="tag" data-key="card3_tag">إدارية</div>
+      <div class="tools">
+        <a href="#" class="view-btn" data-key="card3_view">👁️</a>
+        <a href="docs/hr-policy.pdf" target="_blank">📄</a>
+        <a href="https://qr-code.com/hr" target="_blank">🔳</a>
+      </div>
+    </div>
+
+    <div class="card" data-category="إدارية">
+      <div class="icon">🔐</div>
+      <h4 data-key="card4_title">سياسة الجودة الشاملة</h4>
+      <p data-key="card4_desc">ضمان الجودة في جميع الخدمات</p>
+      <div class="tag" data-key="card4_tag">إدارية</div>
+      <div class="tools">
+        <a href="#" class="view-btn" data-key="card4_view">👁️</a>
+        <a href="docs/quality.pdf" target="_blank">📄</a>
+        <a href="https://qr-code.com/quality" target="_blank">🔳</a>
+      </div>
+    </div>
+
+    <div class="card" data-category="طبية">
+      <div class="icon">🚨</div>
+      <h4 data-key="card5_title">سياسة الطوارئ والأزمات</h4>
+      <p data-key="card5_desc">إجراءات التعامل مع حالات الطوارئ</p>
+      <div class="tag" data-key="card5_tag">طبية</div>
+      <div class="tools">
+        <a href="#" class="view-btn" data-key="card5_view">👁️</a>
+        <a href="docs/emergency.pdf" target="_blank">📄</a>
+        <a href="https://qr-code.com/emergency" target="_blank">🔳</a>
+      </div>
+    </div>
+
+    <div class="card" data-category="طبية">
+      <div class="icon">🩺</div>
+      <h4 data-key="card6_title">سياسة الخدمات الطبية</h4>
+      <p data-key="card6_desc">معايير تقديم الخدمات الطبية للمرضى</p>
+      <div class="tag" data-key="card6_tag">طبية</div>
+      <div class="tools">
+        <a href="#" class="view-btn" data-key="card6_view">👁️</a>
+        <a href="docs/medical-services.pdf" target="_blank">📄</a>
+        <a href="https://qr-code.com/medical-services" target="_blank">🔳</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- نافذة منبثقة -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">✖</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+  </div>
+</div>
+
+<footer>
+  <h4 data-key="footer_text">جميع الحقوق محفوظة © 2027 الإدارة التنفيذية للصحة الرقمية في مستشفى الملك عبد العزيز</h4>
+
+  <h5 data-key="footer_supervisor">م.هاني مياجان</h5>
+</footer>
+
+<script src="policies.js"></script>

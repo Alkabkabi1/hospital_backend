@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-key="page_title">تواصل معنا - مستشفى الملك عبد العزيز بمكة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="communication.css">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="logo">
+      <img src="/icon/SB.png" alt="شعار المستشفى">
+      <span>
+        <span >مستشفى الملك عبد العزيز بمكة</span><br>
+        <span >King Abdulaziz Hospital</span>
+      </span>
+    </div>
+    <nav class="nav">
+      <ul class="dropdown">
+        <li><a href="/home/home.html" data-key="nav_home">الرئيسية</a></li>
+        <li><a href="/page1/page1.html" data-key="nav_about">عن المستشفى ▾</a>
+          <ul class="dropdown-m">
+            <li><a href="/page2/page2.html" data-key="nav_doctors">الأطباء</a></li>
+          </ul>
+        </li>
+        <li><a href="#" data-key="nav_services">الخدمات الإلكترونية ▾</a>
+          <ul class="dropdown-m">
+            <li><a href="/page3/page3.html" data-key="nav_emp_services">خدمات الموظفين</a></li>
+            <li><a href="/page4/page4.html" data-key="nav_patient_services">خدمات المرضى</a></li>
+          </ul>
+        </li>
+        <li><a href="/policies/policies.html" data-key="nav_policies">السياسات</a></li>
+        <li><a href="/communication/communication.html" data-key="nav_contact">تواصل معنا</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-btn" onclick="toggleLanguage()">
+        <i class="fas fa-globe"></i> <span data-key="lang_btn">عربي</span>
+      </button>
+      <button class="login-btn" onclick="window.location.href='/Login/Login.html'" data-key="btn_login">تسجيل الدخول</button>
+      <button class="signup-btn" onclick="window.location.href='/signup/signup.html'" data-key="btn_signup">إنشاء حساب</button>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="section-title" data-key="contact_title">تواصل معنا</h2>
+    <div class="contact-wrapper">
+      <form id="contactForm">
+       <input type="text" name="name" data-key="placeholder_name" placeholder="الاسم الكامل" />
+<input type="email" name="email" data-key="placeholder_email" placeholder="البريد الإلكتروني" />
+<textarea name="message" data-key="placeholder_message" placeholder="رسالتك..."></textarea>
+
+        <button type="submit" data-key="btn_send">إرسال الرسالة</button>
+      </form>
+      <div>
+        <div class="info-box">
+          <div class="info-item"><i class="fas fa-phone"></i><span><b data-key="label_admin">الإدارة العامة:</b> +966‑12‑XXX‑XXXX</span></div>
+          <div class="info-item"><i class="fas fa-info-circle"></i><span><b data-key="label_info">الاستعلامات:</b> +966‑12‑XXX‑XXXX</span></div>
+          <div class="info-item"><i class="fas fa-envelope"></i><span>info@hospital.sa</span></div>
+          <div class="info-item"><i class="fas fa-map-marker-alt"></i><span data-key="label_address">مكة المكرمة ‑ المملكة العربية السعودية</span></div>
+        </div>
+        <div class="map-box">
+          <iframe src="https://www.google.com/maps/embed?..."></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4 data-key="footer_links">روابط رسمية</h4>
+        <ul>
+          <li><a href="https://www.moh.gov.sa/Pages/default.aspx" data-key="link_moh">وزارة الصحة</a></li>
+          <li><a href="https://www.makkahhc.sa/" data-key="link_mhc">تجمع مكة المكرمة الصحي</a></li>
+          <li><a href="https://scfhs.org.sa/ar" data-key="link_scfhs">هيئة التخصصات الصحية</a></li>
+          <li><a href="https://www.sfda.gov.sa/" data-key="link_sfda">هيئة الغذاء والدواء</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-key="footer_contact">معلومات الاتصال</h4>
+        <p data-key="footer_phone">الهاتف: 012‑5442400</p>
+        <p>البريد: info@kaah.med.sa</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-key="footer_follow">تابعونا</h4>
+        <div class="social-icons">
+          <a href="https://x.com/kaahmak?lang=ar"><img src="/icon/x.png" alt="X"></a>
+          <a href="#"><img src="/icon/s.png" alt="Snapchat"></a>
+          <a href="#"><img src="/icon/y.png" alt="YouTube"></a>
+          <a href="#"><img src="/icon/i.png" alt="Instagram"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <h4 data-key="footer_copy">جميع الحقوق محفوظة © 2027 الادارة التنفذية للصحة الرقمية في مستشفى الملك عبد العزيز</h4>
+      <h5 data-key="footer_supervisor">م.هاني مياجان</h5>
+    </div>
+  </footer>
+
+  <script src="communication.js"></script>
+</body>
+</html>

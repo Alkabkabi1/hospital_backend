@@ -1,0 +1,190 @@
+/* ==== إعدادات عامة للصفحة ==== */
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f9f9f9;
+      direction: rtl;
+    }
+
+    /* ==== تنسيق الهيدر ==== */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header .logo img {
+      height: 90px;
+    }
+    .header .logo span {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-direction: row-reverse;
+    }
+    .lang-btn, .home-link {
+      background: #2c4952;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+    
+
+    /* ==== حاوية النموذج ==== */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 80px);
+      padding: 20px;
+    }
+    .form-box {
+      width: 100%;
+      max-width: 400px;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    /* ==== حقول النموذج ==== */
+    .form-group { margin-bottom: 20px; text-align: right; }
+    label { display: block; margin-bottom: 6px; }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    /* مجموعة تنسيق رقم الجوال */
+    .phone-group { display: flex; gap: 10px; }
+    .phone-group input:first-child { width: 25%; }
+    .phone-group input:last-child { width: 75%; }
+
+    .select-wrapper {
+      width: 100%;
+      position: relative;
+    }
+    
+    .select-wrapper select {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 16px;
+      font-family: 'Cairo', sans-serif;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fff;
+      appearance: none;
+      direction: rtl; /* اجعليها ltr إذا اللغة إنجليزية */
+      transition: border-color 0.3s ease;
+    }
+    
+    .select-wrapper select:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+    
+    .select-wrapper::after {
+      content: "▼";
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: #555;
+      font-size: 12px;
+    }
+    
+    .select-wrapper::after {
+      right: auto;
+      left: 12px;
+      [dir="rtl"] & {
+        right: 12px;
+        left: auto;
+      }
+    }
+    
+
+    /* ==== زر التسجيل ==== */
+    .btn {
+      background-color: #375a66;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #2c4952;
+    }
+
+    /* ==== رسائل الحالة ==== */
+    .message {
+      display: none;
+      font-size: 14px;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+    }
+    .message.success {
+      background: #e6f9ec;
+      color: #20a153;
+      border: 1px solid #b0e6c7;
+    }
+    .message.error {
+      background: #fdecea;
+      color: #d0312d;
+      border: 1px solid #f3b3b3;
+    }
+
+    /* ==== روابط إضافية ==== */
+    .alt-link {
+      font-size: 13px;
+      margin-top: 20px;
+    }
+    .alt-link a {
+      color: #375a66;
+      text-decoration: none;
+    }
+
+    /* ==== الفوتر ==== */
+    .login-footer {
+      text-align: center;
+      font-size: 13px;
+      padding: 20px;
+      background-color: #fafafa;
+      border-top: 1px solid #eee;
+    }
+    .login-footer a {
+      margin: 0 8px;
+      color: #333;
+      text-decoration: none;
+    }
+    .login-footer p {
+      margin-top: 10px;
+      color: #777;
+    }

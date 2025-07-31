@@ -1,0 +1,42 @@
+{
+  "ar": {
+    "hospital_name": "مستشفى الملك عبد العزيز بمكة<br>King Abdulaziz Hospital",
+    "lang_btn": "عربي",
+    "services_title": "الخدمات الإلكترونية لخدمة المرضى",
+    "card1_title": "فتح ملف طبي",
+    "card1_desc": "تعبئة المعلومات لفتح الملف",
+    "card2_title": "حجز المواعيد",
+    "card2_desc": "تمكين المستفيد من حجز مواعيده",
+    "card3_title": "طلب دواء",
+    "card3_desc": "خدمات الصيدلية وكيفية طلب الدواء",
+    "card4_title": "أوقات العمل",
+    "card4_desc": "ملخص مواعيد العمل للأقسام والزيارات",
+    "card5_title": "الإرشادات والتعليمات",
+    "card5_desc": "جميع الإرشادات والتعليمات للأقسام",
+    "card6_title": "حقوق المرضى",
+    "card6_desc": "معرفة الحقوق والمسؤوليات للمرضى",
+    "card_btn": "دخول",
+    "footer_copy": "جميع الحقوق محفوظة © 2027 الإدارة التنفيذية للصحة الرقمية في مستشفى الملك عبد العزيز",
+    "footer_supervisor": "م.هاني مياجان"
+  },
+  "en": {
+    "hospital_name": "King Abdulaziz Hospital in Makkah<br>King Abdulaziz Hospital",
+    "lang_btn": "English",
+    "services_title": "E-Services for Patients",
+    "card1_title": "Open Medical File",
+    "card1_desc": "Fill in your information to open a file",
+    "card2_title": "Book Appointments",
+    "card2_desc": "Enables beneficiaries to book appointments",
+    "card3_title": "Request Medicine",
+    "card3_desc": "Pharmacy services and how to request medicine",
+    "card4_title": "Working Hours",
+    "card4_desc": "Summary of department and visit schedules",
+    "card5_title": "Instructions & Guidelines",
+    "card5_desc": "All departmental instructions and guidelines",
+    "card6_title": "Patients' Rights",
+    "card6_desc": "Know patients' rights and responsibilities",
+    "card_btn": "Enter",
+    "footer_copy": "All rights reserved © 2027 Digital Health Administration - King Abdulaziz Hospital",
+    "footer_supervisor": "Eng. Hani Miyajan"
+  }
+}

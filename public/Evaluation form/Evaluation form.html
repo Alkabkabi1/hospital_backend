@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-key="page_title">نموذج تقييم و مراجعة السياسات</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="Evaluation form.css">
+</head>
+<body>
+
+  <!-- رأس الصفحة -->
+  <header>
+    <div class="header-left">
+      <button class="lang-btn" onclick="toggleLanguage()">
+        <i class="fas fa-globe"></i> <span data-key="lang_btn">عربي</span>
+      </button>
+      <a href="/Employee profile/Employee profile.html" class="back-arrow" title="العودة للصفحة الرئيسية">←</a>
+    </div>
+    <span data-key="form_title">نموذج لتقييم و مراجعة السياسات</span>
+  </header>
+
+  <main>
+    <div class="info-box" data-key="form_info">
+      عزيزنا الموظف، حرصاً منا على راحتك النفسية وجودة بيئة العمل، نأمل منك تعبئة هذا النموذج لتقييم مستوى الضغط
+      وتأثيره في مهامك، والاطلاع على السياسات المعتمدة والموافقة عليها.
+    </div>
+
+    <!-- القسم الأول -->
+    <section>
+      <h2 data-key="section1_title">أولاً: تقييم الضغط الوظيفي</h2>
+
+      <label data-key="stress_question1">كيف تشعر في عملك هذا الأسبوع؟</label>
+      <div class="radio-group">
+        <label><input type="radio" name="stress" value="خفيف"> <span data-key="stress_low">تشعر بضغط بسيط</span></label>
+        <label><input type="radio" name="stress" value="متوسط"> <span data-key="stress_medium">تشعر بضغط متوسط</span></label>
+        <label><input type="radio" name="stress" value="شديد"> <span data-key="stress_high">تشعر بضغط شديد</span></label>
+        <label><input type="radio" name="stress" value="مرتاح"> <span data-key="stress_none">مرتاح</span></label>
+      </div>
+
+      <label data-key="stress_question2">تشعر أن الضغط يؤثر على صحتك النفسية؟</label>
+      <div class="radio-group">
+        <label><input type="radio" name="mental" value="no"> <span data-key="mental_no">لا</span></label>
+        <label><input type="radio" name="mental" value="yes"> <span data-key="mental_little">نعم قليلاً</span></label>
+        <label><input type="radio" name="mental" value="severe"> <span data-key="mental_severe">نعم كثيراً</span></label>
+      </div>
+
+      <label data-key="stress_comment">هل ترغب بمشاركة شيء معين عن الضغوط التي تواجهها؟ (اختياري)</label>
+      <textarea rows="4" data-key="placeholder_optional" placeholder="اكتبها هنا"></textarea>
+    </section>
+
+    <!-- القسم الثاني -->
+    <section>
+      <h2 data-key="section2_title">ثانياً: سياسات العمل</h2>
+      <div class="checkbox-group">
+        <label><input type="checkbox"> <span data-key="policy1">ألتزم بالحفاظ على سرية المعلومات داخل المنشأة</span></label>
+        <label><input type="checkbox"> <span data-key="policy2">أتعهد بعدم استخدام وسائل العمل للمصالح الشخصية</span></label>
+        <label><input type="checkbox"> <span data-key="policy3">أستخدم أدوات وموارد العمل فقط للأغراض الرسمية</span></label>
+        <label><input type="checkbox"> <span data-key="policy4">أتعهد بالاحترام والتعاون داخل بيئة العمل</span></label>
+        <label><input type="checkbox"> <span data-key="policy5">أتعهد بإبلاغ الإدارة في حال وجود ضغط يؤثر على جودة عملي</span></label>
+      </div>
+    </section>
+
+    <button class="submit-btn" onclick="submitForm()" data-key="submit_btn">إرسال النموذج</button>
+
+    <div class="note" data-key="note">
+      جميع البيانات المدخلة تعامل بسرية تامة وتُستخدم فقط لتحسين بيئة العمل وتقديم الدعم اللازم
+    </div>
+  </main>
+
+  <script src="Evaluation form.js"></script>
+</body>
+</html>

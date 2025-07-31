@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-key="nav_doctors">الأطباء - مستشفى الملك عبد العزيز</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="page2.css">
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <header class="main-header">
+    <div class="logo">
+      <img src="/icon/SB.png" alt="شعار المستشفى">
+      <span>مستشفى الملك عبد العزيز بمكة<br>King Abdulaziz Hospital</span>
+    </div>
+    <nav class="nav">
+      <ul class="dropdown">
+        <li><a href="/home/home.html" data-key="nav_home">الرئيسية</a></li>
+        <li><a href="/page1/page1.html" data-key="nav_about">عن المستشفى ▾</a>
+  <ul class="dropdown-m">
+    <li><a href="/page2/page2.html" data-key="nav_doctors">الأطباء</a></li>
+  </ul>
+</li>
+        <li><a href="#" data-key="nav_services">الخدمات الإلكترونية ▾</a>
+          <ul class="dropdown-m">
+            <li><a href="/page3/page3.html" data-key="nav_emp_services">خدمات الموظفين</a></li>
+            <li><a href="/page4/page4.html" data-key="nav_pat_services">خدمات المرضى</a></li>
+          </ul>
+        </li>
+        <li><a href="/policies/policies.html" data-key="nav_policies">السياسات</a></li>
+        <li><a href="/communication/communication.html" data-key="nav_contact">تواصل معنا</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-btn" onclick="toggleLanguage()">
+        <i class="fas fa-globe"></i> عربي
+      </button>
+      <button class="login-btn" onclick="window.location.href='/Login/Login.html'" data-key="login_btn">تسجيل الدخول</button>
+      <button class="signup-btn" onclick="window.location.href='/signup/signup.html'" data-key="signup_btn">إنشاء حساب</button>
+    </div>
+  </header>
+
+ <!-- محتوى الأطباء -->
+<section class="doctors-section">
+  <h2 data-key="doctors_title">أبرز الأطباء</h2>
+  <p class="subtitle" data-key="doctors_subtitle">من الأطباء المتخصصين برعايتكم الصحية</p>
+
+  <div class="slider-wrapper">
+    <button class="nav-btn left" onclick="slideLeft()">⬅</button>
+    <div class="doctor-slider" id="doctorSlider">
+      
+      <!-- الطبيب 1 -->
+      <div class="doctor-card">
+        <img src="/icon/ww.png" alt="">
+        <h3 data-key="doctor1_name">د. أحمد</h3>
+        <p class="title" data-key="doctor1_title">استشاري جراحة القلب</p>
+        <p class="desc" data-key="doctor1_desc">خبرة 15 عامًا في جراحة القلب المفتوح وشفيرة القلب</p>
+        <a class="more-btn" href="#" data-key="more_btn">المزيد</a>
+      </div>
+
+      <!-- الطبيب 2 -->
+      <div class="doctor-card">
+        <img src="/icon/ww.png" alt="">
+        <h3 data-key="doctor2_name">د. سارة</h3>
+        <p class="title" data-key="doctor2_title">استشارية طب الأطفال</p>
+        <p class="desc" data-key="doctor2_desc">متخصصة في حديثي الولادة مع خبرة 12 عامًا</p>
+        <a class="more-btn" href="#" data-key="more_btn">المزيد</a>
+      </div>
+
+      <!-- الطبيب 3 -->
+      <div class="doctor-card">
+        <img src="/icon/ww.png" alt="">
+        <h3 data-key="doctor3_name">د. خالد</h3>
+        <p class="title" data-key="doctor3_title">استشاري الأمراض الباطنية</p>
+        <p class="desc" data-key="doctor3_desc">حاصل على البورد الأمريكي في الطب الباطني</p>
+        <a class="more-btn" href="#" data-key="more_btn">المزيد</a>
+      </div>
+
+      <!-- الطبيب 4 -->
+      <div class="doctor-card">
+        <img src="/icon/ww.png" alt="">
+        <h3 data-key="doctor4_name">د. ناصر</h3>
+        <p class="title" data-key="doctor4_title">استشاري جراحة مخ و أعصاب</p>
+        <p class="desc" data-key="doctor4_desc">خبرة 17 عامًا</p>
+        <a class="more-btn" href="#" data-key="more_btn">المزيد</a>
+      </div>
+
+      <!-- الطبيب 5 -->
+      <div class="doctor-card">
+        <img src="/icon/ww.png" alt="">
+        <h3 data-key="doctor5_name">د. مريم</h3>
+        <p class="title" data-key="doctor5_title">استشارية تغذية</p>
+        <p class="desc" data-key="doctor5_desc">متخصصة في التغذية الصحية مع خبرة 13 عامًا</p>
+        <a class="more-btn" href="#" data-key="more_btn">المزيد</a>
+      </div>
+
+      <!-- الطبيب 6 -->
+      <div class="doctor-card">
+        <img src="/icon/ww.png" alt="">
+        <h3 data-key="doctor6_name">د. أنس</h3>
+        <p class="title" data-key="doctor6_title">استشاري طب أسنان</p>
+        <p class="desc" data-key="doctor6_desc">حاصل على البورد الأمريكي في طب الأسنان</p>
+        <a class="more-btn" href="#" data-key="more_btn">المزيد</a>
+      </div>
+
+    </div>
+    <button class="nav-btn right" onclick="slideRight()">➡</button>
+  </div>
+</section>
+
+
+  <!-- الفوتر -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4 data-key="footer_links">روابط رسمية</h4>
+          <ul class="footer">
+            <li><a href="https://www.moh.gov.sa/Pages/default.aspx" data-key="footer_moh">وزارة الصحة</a></li>
+            <li><a href="https://www.makkahhc.sa/" data-key="footer_cluster">تجمع مكة المكرمة الصحي</a></li>
+            <li><a href="https://scfhs.org.sa/ar" data-key="footer_scfhs">هيئة التخصصات الصحية</a></li>
+            <li><a href="https://www.sfda.gov.sa/" data-key="footer_sfda">هيئة الغذاء والدواء</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-key="footer_contact">معلومات الاتصال</h4>
+          <p data-key="footer_phone">الهاتف: 012-5442400</p>
+          <p data-key="footer_email">البريد: info@kaah.med.sa</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-key="footer_follow">تابعونا</h4>
+          <div class="social-icons">
+            <a href="https://x.com/kaahmak?lang=ar"><img src="/icon/x.png" alt="X"></a>
+            <a href="#"><img src="/icon/s.png" alt="Snapchat"></a>
+            <a href="#"><img src="/icon/y.png" alt="YouTube"></a>
+            <a href="#"><img src="/icon/i.png" alt="Instagram"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <h4 data-key="footer_copy">جميع الحقوق محفوظة © 2027 الإدارة التنفذية للصحة الرقمية في مستشفى الملك عبد العزيز</h4>
+      <h5 data-key="footer_supervisor">م. هاني مياجان</h5>
+    </div>
+  </footer>
+
+  <script src="page2.js"></script>
+</body>
+</html>
