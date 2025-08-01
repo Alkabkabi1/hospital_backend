@@ -17,14 +17,13 @@ router.post("/login", (req, res) => {
 
     const user = results[0];
 
-    // ✅ تفعيل الجلسة للمستخدم
+    // تفعيل الجلسة للمستخدم
     req.session.user = {
       id: user.id,
       name: user.name,
       email: user.email,
       role: user.role
     };
-    
 
     res.status(200).json({ message: "تم تسجيل الدخول بنجاح", user });
   });
@@ -41,7 +40,7 @@ router.post("/signup", (req, res) => {
     const user_id = result.insertId; // نحصل على الـ user_id الذي تم إنشاؤه في جدول users
 
     // ✅ إذا كان المستخدم مريضًا، أنشئ سجل في جدول patients
-    if (role === "patient") {
+    if (role === "visoter") {
       const insertPatient = `
         INSERT INTO patients (user_id, name, email, phone, created_at)
         VALUES (?, ?, ?, ?, NOW())
