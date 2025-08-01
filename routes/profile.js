@@ -28,7 +28,7 @@ router.post("/", (req, res) => {
   }
 
   const {
-    full_name,
+    name, // ← بدلًا من full_name
     birth_date,
     blood_type,
     address,
@@ -40,25 +40,24 @@ router.post("/", (req, res) => {
   } = req.body;
 
   const sql = `
-  UPDATE patients SET
-    name = ?, birth_date = ?, blood_type = ?, address = ?,
-    email = ?, mrn = ?, national_id = ?, phone = ?, marital_status = ?
-  WHERE user_id = ?
-`;
+    UPDATE patients SET
+      name = ?, birth_date = ?, blood_type = ?, address = ?,
+      email = ?, mrn = ?, national_id = ?, phone = ?, marital_status = ?
+    WHERE user_id = ?
+  `;
 
-const values = [
-  full_name, // لا تغيّري الاسم هنا، هذا من body
-  birth_date,
-  blood_type,
-  address,
-  email,
-  mrn,
-  national_id,
-  phone,
-  marital_status,
-  userId,
-];
-
+  const values = [
+    name,
+    birth_date,
+    blood_type,
+    address,
+    email,
+    mrn,
+    national_id,
+    phone,
+    marital_status,
+    userId,
+  ];
 
   db.query(sql, values, (err, result) => {
     if (err) {
@@ -69,7 +68,5 @@ const values = [
     res.json({ message: "✅ تم تحديث بيانات الملف الشخصي بنجاح" });
   });
 });
-
-
 
 module.exports = router;
