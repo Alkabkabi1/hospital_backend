@@ -41,7 +41,7 @@ async function createAccount() {
       localStorage.setItem("userEmail", email);
 
       setTimeout(() => {
-        if (role === "patient") {
+        if (role === "visitor") { // <-- FIXED: match HTML value
           window.location.href = "/Patients/patient-profile.html";
         } else if (role === "staff") {
           window.location.href = "/Employees/employee-profile.html";
