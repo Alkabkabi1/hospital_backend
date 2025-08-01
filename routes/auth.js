@@ -31,7 +31,7 @@ router.post("/login", (req, res) => {
 
 // ✅ إنشاء حساب جديد
 router.post("/signup", (req, res) => {
-  const { name, email, password, phone, role, employee_number } = req.body;  // تأكد من أن لديك employee_number في البيانات المدخلة
+  const { name, email, password, phone, role} = req.body;  // تأكد من أن لديك employee_number في البيانات المدخلة
 
   const sql = "INSERT INTO users (name, email, password, phone, role) VALUES (?, ?, ?, ?, ?)";
   db.query(sql, [name, email, password, phone, role], (err, result) => {
@@ -40,11 +40,12 @@ router.post("/signup", (req, res) => {
     const user_id = result.insertId; // نحصل على الـ user_id الذي تم إنشاؤه في جدول users
 
     // ✅ إذا كان المستخدم مريضًا، أنشئ سجل في جدول patients
-    if (role === "visoter") {
+    if (role === "visitor") {
       const insertPatient = `
         INSERT INTO patients (user_id, name, email, phone, created_at)
         VALUES (?, ?, ?, ?, NOW())
       `;
+      
       db.query(insertPatient, [user_id, name, email, phone], (err2, result2) => {
         if (err2) return res.status(500).json({ message: "تم إنشاء المستخدم، لكن فشل إنشاء سجل المريض", error: err2 });
 
@@ -78,6 +79,7 @@ router.post("/signup", (req, res) => {
       );
     } else {
       // ✅ إذا كان ليس مريض أو موظف آخر
+      res.status(201).json({ message: "تم إنشاء الحساب بنجاح" });
       res.status(201).json({ message: "تم إنشاء الحساب بنجاح" });
     }
   });
