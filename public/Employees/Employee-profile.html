@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title data-key="page_title">ملف الموظف</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Employee profile.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+      <img src="/icon/SB.png" alt="شعار" style="height: 100px;">
+      <span>
+        <span >مستشفى الملك عبد العزيز بمكة</span><br>
+        <small>King Abdulaziz Hospital</small>
+      </span>
+    </div>
+    <div class="header-left">
+      <a href="/home/home.html" class="header-btn"><i class="fas fa-home"></i> <span data-key="nav_home">الرئيسية</span></a>
+      <button class="header-btn" onclick="showNotifications()"><i class="fas fa-bell"></i> <span data-key="nav_notifications">الإشعارات</span></button>
+      <a href="/Login/Login.html" class="header-btn"><i class="fas fa-sign-out-alt"></i> <span data-key="nav_logout">تسجيل خروج</span></a>
+      <button class="header-btn" onclick="toggleLanguage()"><i class="fas fa-globe"></i> <span data-key="lang_btn">عربي</span></button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="grid">
+
+      <div class="card">
+        <h4 data-key="eval_status_title">حالة التقييم</h4>
+        <p data-key="eval_status_desc">✅ تم إكمال التقييم الأخير</p>
+        <span class="date">15 فبراير 2024</span><br>
+        <small data-key="eval_type">تقييم الأداء السنوي</small>
+        <button class="eval-btn" onclick="window.location.href='/Evaluation form/Evaluation form.html'" data-key="open_eval_form">📝 فتح نموذج التقييم</button>
+      </div>
+
+      <div class="card profile">
+        <img src="/icon/ww.png" alt="صورة">
+        <h3>علي</h3>
+        <p data-key="role">إداري</p>
+        <div class="info">
+          <div><i class="fas fa-id-badge"></i> EMP‑2024‑001</div>
+          <div><i class="fas fa-envelope"></i> ali.m@company.com</div>
+        </div>
+      </div>
+
+      <div class="card actions">
+        <h4 data-key="quick_actions">إجراءات سريعة</h4>
+        <button data-key="edit_profile">⚙️ تعديل الملف الشخصي</button>
+        <button data-key="change_password">🔐 تغيير كلمة المرور</button>
+        <button data-key="view_prev_evals">📋 عرض التقييمات السابقة</button>
+        <button data-key="view_notifications">🔔 عرض جميع الإشعارات</button>
+      </div>
+
+      <div class="card policies">
+        <h4 data-key="policies_title">السياسات والموافقات</h4>
+        <div class="item">
+          <span data-key="policy_uniform">سياسة الزي الموحد</span>
+          <span class="date">10 فبراير 2024</span>
+        </div>
+        <div class="item">
+          <span data-key="policy_attendance">سياسة الحضور والانصراف</span>
+          <span class="date">5 فبراير 2024</span>
+        </div>
+        <div class="item">
+          <span data-key="policy_leaves">سياسة الإجازات السنوية</span>
+          <span class="date">1 فبراير 2024</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="lang-employee.json"></script>
+  <script src="Employee profile.js"></script>
+</body>
+</html>
