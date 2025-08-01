@@ -53,14 +53,29 @@ router.post("/signup", (req, res) => {
     } else if (role === "employee") {
       // ✅ إذا كان موظف فقط، أنشئ سجل في جدول الموظفين
       const insertEmployee = `
-        INSERT INTO employees (user_id, name, email, phone, position, department, status, join_date, employee_number)
-        VALUES (?, ?, ?, ?, 'default_position', 'default_department', 'active', NOW(), ?)
+        INSERT INTO employees (
+          name, email, user_id, position, department, bio, photo_url, status, join_date, employee_number
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?)
       `;
-      db.query(insertEmployee, [user_id, name, email, phone, employee_number], (err2, result2) => {
-        if (err2) return res.status(500).json({ message: "تم إنشاء المستخدم، لكن فشل إنشاء سجل الموظف", error: err2 });
+      db.query(
+        insertEmployee,
+        [
+          name,                // name
+          email,               // email
+          user_id,             // user_id
+          'default_position',  // position
+          'default_department',// department
+          '',                  // bio (empty or from req.body)
+          '',                  // photo_url (empty or from req.body)
+          'active',            // status
+          employee_number      // employee_number
+        ],
+        (err2, result2) => {
+          if (err2) return res.status(500).json({ message: "تم إنشاء المستخدم، لكن فشل إنشاء سجل الموظف", error: err2 });
 
-        res.status(201).json({ message: "تم إنشاء حساب الموظف بنجاح" });
-      });
+          res.status(201).json({ message: "تم إنشاء حساب الموظف بنجاح" });
+        }
+      );
     } else {
       // ✅ إذا كان ليس مريض أو موظف آخر
       res.status(201).json({ message: "تم إنشاء الحساب بنجاح" });
