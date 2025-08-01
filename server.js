@@ -8,6 +8,7 @@ const authRoutes = require('./routes/auth');
 const profileRoutes = require('./routes/profile');
 const sessionRoutes = require('./routes/userInfo');
 const sessionCheckRoutes = require('./routes/patientHome');
+const employeeProfile = require("./routes/employeeProfile");
 
 
 console.log("server.js loaded");
