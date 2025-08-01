@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title data-key="personal_info">الملف الشخصي للمريض</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="patient-profile.css">
+</head>
+<body>
+
+  <!-- ✅ الهيدر -->
+  <header>
+    <div class="logo">
+      <img src="/icon/SB.png" alt="شعار المستشفى">
+      <span>مستشفى الملك عبد العزيز بمكة<br><small>King Abdulaziz Hospital</small></span>
+    </div>
+    <div class="header-left">
+      <a href="../home3/home3.html" class="header-btn">
+        <i class="fas fa-home"></i> <span data-key="nav_home">الرئيسية</span>
+      </a>
+      
+      
+      
+      <button class="header-btn" onclick="showNotifications()"><i class="fas fa-bell"></i> <span data-key="notifications">الإشعارات</span></button>
+      <a href="../Login/Login.html" class="header-btn"><i class="fas fa-sign-out-alt"></i> <span data-key="logout">تسجيل خروج</span></a>
+      <button class="header-btn lang-btn" onclick="toggleLanguage()"><i class="fas fa-globe"></i> عربي</button>
+    </div>
+  </header>
+
+  <!-- ✅ ترحيب بالمستخدم -->
+  <section class="welcome">
+    <h1 data-key="welcome_heading">👋 مرحبًا بك</h1>
+    <p data-key="welcome_subtext">هذا هو ملفك الشخصي. يمكنك تعديل بياناتك عند الحاجة.</p>
+  </section>
+
+  <!-- ✅ معلومات المستخدم -->
+  <section class="info-box">
+    <div>
+      <div class="section-title" data-key="personal_info">معلومات شخصية</div>
+      <div class="info-pair"><label data-key="full_name">الاسم الكامل</label><input id="fullName" type="text" disabled></div>
+      <div class="info-pair"><label data-key="birth_date">تاريخ الميلاد</label><input id="birthDate" type="date" disabled></div>
+      <div class="info-pair"><label data-key="blood_type">فصيلة الدم</label><input id="bloodType" type="text" disabled></div>
+      <div class="info-pair"><label data-key="address">العنوان</label><input id="location" type="text" disabled></div>
+    </div>
+    <div>
+      <div class="info-pair"><label data-key="email">البريد الإلكتروني</label><input id="email" type="email" disabled></div>
+      <div class="info-pair"><label data-key="mrn">رقم الملف الطبي</label><input id="mrn" type="text" disabled></div>
+      <div class="info-pair"><label data-key="id_number">الهوية/الإقامة</label><input id="idNum" type="text" disabled></div>
+      <div class="info-pair"><label data-key="phone">رقم الجوال</label><input id="phone" type="text" disabled></div>
+      <div class="info-pair"><label data-key="marital_status">الحالة الاجتماعية</label><input id="status" type="text" disabled></div>
+    </div>
+  </section>
+
+  <!-- ✅ أزرار التعديل والحفظ -->
+  <div class="btn-wrapper">
+    <button class="btn secondary" id="editBtn" onclick="enableEdit()" data-key="edit_btn">تعديل البيانات</button>
+    <button class="btn" id="saveBtn" onclick="saveData()" disabled data-key="save_btn">حفظ البيانات</button>
+  </div>
+
+  <script src="patient-profile.js"></script>
+</body>
+</html>
