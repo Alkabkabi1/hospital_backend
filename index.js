@@ -49,7 +49,6 @@ const userInfoRoute = require("./routes/userInfo");
 app.use("/api", authRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/patient-home", patientHomeRoute);
-app.use("/api/patient-home", patientHomeRoute);
 
 // تشغيل السيرفر
 const PORT = process.env.PORT || 3000;
