@@ -30,8 +30,6 @@ router.post("/login", (req, res) => {
   });
 });
 
-
-// ✅ إنشاء حساب جديد
 // ✅ إنشاء حساب جديد
 router.post("/signup", (req, res) => {
   const { name, email, password, phone, role, employee_number } = req.body;  // تأكد من أن لديك employee_number في البيانات المدخلة
