@@ -33,7 +33,7 @@ router.post("/login", (req, res) => {
 
 // ✅ إنشاء حساب جديد
 router.post("/signup", (req, res) => {
-  const { name, email, password, phone, role } = req.body;
+  const { name, email, password, phone, role, employee_number } = req.body;  // تأكد من أن لديك employee_number في البيانات المدخلة
 
   const sql = "INSERT INTO users (name, email, password, phone, role) VALUES (?, ?, ?, ?, ?)";
   db.query(sql, [name, email, password, phone, role], (err, result) => {
@@ -42,28 +42,46 @@ router.post("/signup", (req, res) => {
     const user_id = result.insertId;
 
     // ✅ إذا كان المستخدم مريضًا، أنشئ سجل في جدول patients
-    if (role === "visitor") {
+    if (role === "patient") {
       const insertPatient = `
         INSERT INTO patients (user_id, name, email, phone, created_at)
         VALUES (?, ?, ?, ?, NOW())
       `;
-      
       db.query(insertPatient, [user_id, name, email, phone], (err2, result2) => {
         if (err2) return res.status(500).json({ message: "تم إنشاء المستخدم، لكن فشل إنشاء سجل المريض", error: err2 });
 
         res.status(201).json({ message: "تم إنشاء حساب المريض بنجاح" });
       });
-
     } else {
-      // ✅ إذا كان موظف فقط
-            const insertEmployees = `
-        INSERT INTO employees (user_id, name, email, phone, role, created_at)
-        VALUES (?, ?, ?, ?, ?, NOW())
+      // ✅ إذا كان موظف فقط، أنشئ سجل في جدول الموظفين
+      const insertEmployee = `
+        INSERT INTO employees (
+          name, email, user_id, position, department, bio, photo_url, status, join_date, employee_number
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?)
       `;
-      res.status(201).json({ message: "تم إنشاء الحساب بنجاح" });
+      db.query(
+        insertEmployee,
+        [
+          name,                // name
+          email,               // email
+          user_id,             // user_id
+          'default_position',  // position (or from req.body)
+          'default_department',// department (or from req.body)
+          '',                  // bio (or from req.body)
+          '',                  // photo_url (or from req.body)
+          'active',            // status
+          employee_number      // employee_number
+        ],
+        (err2, result2) => {
+          if (err2) return res.status(500).json({ message: "تم إنشاء المستخدم، لكن فشل إنشاء سجل الموظف", error: err2 });
+
+          res.status(201).json({ message: "تم إنشاء حساب الموظف بنجاح" });
+        }
+      );
     }
   });
 });
+
 
 // ✅ إرسال رمز الاستعادة
 router.post("/send-recovery", (req, res) => {
