@@ -8,6 +8,8 @@ const authRoutes = require('./routes/auth');
 const profileRoutes = require('./routes/profile');
 const sessionRoutes = require('./routes/userInfo');
 const sessionCheckRoutes = require('./routes/patientHome');
+const employeeProfile = require("./routes/employeeProfile");
+
 
 console.log("server.js loaded");
 
@@ -29,6 +31,8 @@ app.use('/api', authRoutes);
 app.use('/api/profile', profileRoutes);
 app.use('/api/session', sessionRoutes);
 app.use('/api/check-session', sessionCheckRoutes);
+app.use("/api/employee-profile", employeeProfile);
+
 
 // ✅ تشغيل السيرفر
 const PORT = 8080;
