@@ -90,7 +90,12 @@ router.post("/signup", (req, res) => {
               error: err2
             });
           }
-
+          req.session.user = {
+            id: user_id,
+            name,
+            email,
+            role
+          };
           res.status(201).json({ message: "تم إنشاء حساب الموظف بنجاح" });
         }
       );
