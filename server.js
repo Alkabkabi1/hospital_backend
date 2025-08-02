@@ -3,6 +3,18 @@ const path = require('path');
 const session = require('express-session'); // الجلسات
 const app = express();
 
+console.log("server.js loaded");
+
+// ✅ تفعيل الجلسات (قبل الراوترات)
+app.use(session({
+  secret: 'secret-key',
+  resave: false,
+  saveUninitialized: true,
+}));
+
+// ✅ لتحليل JSON (قبل الراوترات)
+app.use(express.json());
+
 // ✅ استيراد الراوترات
 const authRoutes = require('./routes/auth');
 const profileRoutes = require('./routes/profile');
@@ -10,30 +22,15 @@ const sessionRoutes = require('./routes/userInfo');
 const sessionCheckRoutes = require('./routes/patientHome');
 const employeeProfile = require("./routes/employeeProfile");
 
-
-
-console.log("server.js loaded");
-
-// ✅ تفعيل الجلسات
-app.use(session({
-  secret: 'secret-key',
-  resave: false,
-  saveUninitialized: true,
-}));
-
-// ✅ لتحليل JSON
-app.use(express.json());
-
-// ✅ عرض ملفات الواجهة
-app.use(express.static(path.join(__dirname, 'public')));
-
-// ✅ الربط بالراوترات
+// ✅ ربط الراوترات
 app.use('/api', authRoutes);
 app.use('/api/profile', profileRoutes);
 app.use('/api/session', sessionRoutes);
 app.use('/api/check-session', sessionCheckRoutes);
-app.use("/api/employee-profile", employeeProfile);
+app.use("/api/employeeProfile", employeeProfile);
 
+// ✅ عرض ملفات الواجهة
+app.use(express.static(path.join(__dirname, 'public')));
 
 // ✅ تشغيل السيرفر
 const PORT = 8080;
