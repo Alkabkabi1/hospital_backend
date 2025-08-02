@@ -72,6 +72,7 @@ async function submitForm() {
     if (res.ok) {
       alert(currentLang === "ar" ? "✅ تم إرسال النموذج بنجاح" : "✅ Form submitted successfully!");
       document.querySelector("form")?.reset();
+      window.location.href = "../home/home.html";
     } else {
       alert(result.message || (currentLang === "ar" ? "حدث خطأ أثناء الإرسال" : "Submission failed"));
     }
