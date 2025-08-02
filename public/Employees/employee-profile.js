@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   loadTranslations(lang);
 
   try {
-    const res = await fetch("/api/employees", {
+    const res = await fetch("/api/employeeProfile", {
       method: "GET",
       credentials: "include"
     });
@@ -96,7 +96,7 @@ async function saveProfile() {
   const photo_url = localStorage.getItem('profileImage') || null;
 
   try {
-    const res = await fetch("/api/employees", {
+    const res = await fetch("/api/employeeProfile", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
