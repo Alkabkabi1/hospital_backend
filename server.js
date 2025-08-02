@@ -22,6 +22,9 @@ const sessionRoutes = require('./routes/userInfo');
 const sessionCheckRoutes = require('./routes/patientHome');
 const employeeProfile = require("./routes/employeeProfile");
 const evaluationRoutes = require("./routes/evaluation");
+const adminRoutes = require("./routes/admin");
+const checkSessionRoutes = require("./routes/checkSession");
+
 
 
 // ✅ ربط الراوترات
@@ -31,6 +34,9 @@ app.use('/api/session', sessionRoutes);
 app.use('/api/check-session', sessionCheckRoutes);
 app.use("/api/employeeProfile", employeeProfile);
 app.use('/api/evaluation', evaluationRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/check-session", checkSessionRoutes);
+
 
 // ✅ عرض ملفات الواجهة
 app.use(express.static(path.join(__dirname, 'public')));
