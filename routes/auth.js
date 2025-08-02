@@ -7,15 +7,24 @@ const sendRecoveryEmail = require("../utils/emailService"); // ✅
 router.post("/login", (req, res) => {
   const { email, password } = req.body;
 
-  const sql = "SELECT * FROM users WHERE email = ? AND password = ?";
-  db.query(sql, [email, password], (err, results) => {
-    if (err) return res.status(500).json({ message: "خطأ في السيرفر" });
+  // التأكد من أن البريد الإلكتروني موجود
+  const sql = "SELECT * FROM users WHERE email = ?";
+  db.query(sql, [email], (err, results) => {
+    if (err) {
+      console.error("خطأ في السيرفر:", err);
+      return res.status(500).json({ message: "خطأ في السيرفر" });
+    }
 
     if (results.length === 0) {
-      return res.status(401).json({ message: "بيانات الدخول غير صحيحة" });
+      return res.status(401).json({ message: "البريد الإلكتروني غير مسجل" });
     }
 
     const user = results[0];
+
+    // مقارنة كلمة المرور المدخلة مع المخزنة في قاعدة البيانات
+    if (password !== user.password) {
+      return res.status(401).json({ message: "كلمة المرور غير صحيحة" });
+    }
 
     // تفعيل الجلسة للمستخدم
     req.session.user = {
@@ -24,6 +33,8 @@ router.post("/login", (req, res) => {
       email: user.email,
       role: user.role
     };
+
+    console.log("تم تسجيل الدخول بنجاح:", req.session.user); // للتأكد من تفعيل الجلسة
 
     res.status(200).json({ message: "تم تسجيل الدخول بنجاح", user });
   });
