@@ -21,6 +21,8 @@ const profileRoutes = require('./routes/profile');
 const sessionRoutes = require('./routes/userInfo');
 const sessionCheckRoutes = require('./routes/patientHome');
 const employeeProfile = require("./routes/employeeProfile");
+const evaluationRoutes = require("./routes/evaluation");
+
 
 // ✅ ربط الراوترات
 app.use('/api', authRoutes);
@@ -28,6 +30,7 @@ app.use('/api/profile', profileRoutes);
 app.use('/api/session', sessionRoutes);
 app.use('/api/check-session', sessionCheckRoutes);
 app.use("/api/employeeProfile", employeeProfile);
+app.use('/api/evaluation', evaluationRoutes);
 
 // ✅ عرض ملفات الواجهة
 app.use(express.static(path.join(__dirname, 'public')));
