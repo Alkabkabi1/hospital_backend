@@ -1,88 +1,91 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>الخدمات الإلكترونية لخدمة المرضى</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- أيقونات Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <link rel="stylesheet" href="page4.css">
+  <meta charset="UTF-8" />
+  <title data-key="page_title">الخدمات الإلكترونية للمرضى</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="page4.css" />
 </head>
 <body>
 
-  <!-- ✅ header -->
-<header>
-  <div class="logo">
-    <img src="/icon/SB.png" alt="شعار المستشفى">
-    <span>مستشفى الملك عبد العزيز بمكة<br>King Abdulaziz Hospital</span>
+  <!-- ✅ الهيدر -->
+  <header>
+    <div class="logo">
+      <img src="/public/icon/SB.png" alt="شعار المستشفى" />
+      <span data-key="hospital_name">مستشفى الملك عبد العزيز بمكة<br>King Abdulaziz Hospital</span>
+    </div>
+    <div class="header-left">
+      <button class="lang-btn" data-key="lang_btn"><i class="fas fa-globe"></i> عربي</button>
+      <a href="/public/home3/home3.html" class="back-arrow" title="العودة للصفحة الرئيسية">←</a>
+    </div>
+  </header>
+
+  <!-- ✅ المحتوى -->
+  <div class="container">
+    <h1 data-key="services_title">الخدمات الإلكترونية لخدمة المرضى</h1>
+
+    <!-- ✅ زر الإضافة للمشرف فقط -->
+    <div id="adminAddBtnContainer" class="add-btn-container" style="display: none;">
+      <button onclick="showAddForm()">➕ <span data-key="add_service">إضافة خدمة</span></button>
+    </div>
+
+    <!-- ✅ نموذج الإضافة -->
+    <div id="addFormContainer" class="add-form-container" style="display: none;">
+      <input type="text" id="newTitle" placeholder="عنوان الخدمة" />
+      <input type="text" id="newDesc" placeholder="وصف الخدمة" />
+      <input type="text" id="newLink" placeholder="رابط الصفحة" />
+      <button onclick="addNewService()" data-key="add">إضافة</button>
+      <button onclick="hideAddForm()" data-key="cancel">إلغاء</button>
+    </div>
+
+    <!-- ✅ البطاقات -->
+    <div class="grid" id="servicesGrid">
+      <div class="card">
+        <div class="card-icon">📄</div>
+        <h3 data-key="card1_title">فتح ملف طبي</h3>
+        <p data-key="card1_desc">تعبئة المعلومات لفتح الملف</p>
+        <a href="open-medical-file.html" class="btn" data-key="card_btn">دخول</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">📅</div>
+        <h3 data-key="card2_title">حجز المواعيد</h3>
+        <p data-key="card2_desc">تمكين المستفيد من حجز مواعيده</p>
+        <a href="appointments.html" class="btn" data-key="card_btn">دخول</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">💊</div>
+        <h3 data-key="card3_title">طلب دواء</h3>
+        <p data-key="card3_desc">خدمات الصيدلية وكيفية طلب الدواء</p>
+        <a href="request-medicine.html" class="btn" data-key="card_btn">دخول</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">⏰</div>
+        <h3 data-key="card4_title">أوقات العمل</h3>
+        <p data-key="card4_desc">ملخص مواعيد العمل للأقسام والزيارات</p>
+        <a href="working-hours.html" class="btn" data-key="card_btn">دخول</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">📖</div>
+        <h3 data-key="card5_title">الإرشادات والتعليمات</h3>
+        <p data-key="card5_desc">جميع الإرشادات والتعليمات للأقسام</p>
+        <a href="instructions.html" class="btn" data-key="card_btn">دخول</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">👤</div>
+        <h3 data-key="card6_title">حقوق المرضى</h3>
+        <p data-key="card6_desc">معرفة الحقوق والمسؤوليات للمرضى</p>
+        <a href="patients-rights.html" class="btn" data-key="card_btn">دخول</a>
+      </div>
+    </div>
   </div>
-  <div class="header-left">
-   <button class="lang-btn" onclick="toggleLanguage()" data-key="lang_btn">
-  <i class="fas fa-globe"></i> عربي
-</button>
 
-    <a href="../home/home.html" class="back-arrow" title="العودة للصفحة الرئيسية">←</a>
-  </div>
-</header>
+  <!-- ✅ الفوتر -->
+  <footer>
+    <h4 data-key="footer_copy">جميع الحقوق محفوظة © 2027 الإدارة التنفيذية للصحة الرقمية</h4>
+    <h5 data-key="footer_supervisor">م.هاني مياجان</h5>
+  </footer>
 
-<!-- ✅ محتوى الخدمات -->
-<div class="container">
-  <h1 data-key="services_title">الخدمات الإلكترونية لخدمة المرضى</h1>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-icon">📄</div>
-      <h3 data-key="card1_title">فتح ملف طبي</h3>
-      <p data-key="card1_desc">تعبئة المعلومات لفتح الملف</p>
-      <a href="open-medical-file.html" class="btn" data-key="card_btn">دخول</a>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">📅</div>
-      <h3 data-key="card2_title">حجز المواعيد</h3>
-      <p data-key="card2_desc">تمكين المستفيد من حجز مواعيده</p>
-      <a href="appointments.html" class="btn" data-key="card_btn">دخول</a>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">💊</div>
-      <h3 data-key="card3_title">طلب دواء</h3>
-      <p data-key="card3_desc">خدمات الصيدلية وكيفية طلب الدواء</p>
-      <a href="request-medicine.html" class="btn" data-key="card_btn">دخول</a>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">⏰</div>
-      <h3 data-key="card4_title">أوقات العمل</h3>
-      <p data-key="card4_desc">ملخص مواعيد العمل للأقسام والزيارات</p>
-      <a href="working-hours.html" class="btn" data-key="card_btn">دخول</a>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">📖</div>
-      <h3 data-key="card5_title">الإرشادات والتعليمات</h3>
-      <p data-key="card5_desc">جميع الإرشادات والتعليمات للأقسام</p>
-      <a href="instructions.html" class="btn" data-key="card_btn">دخول</a>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">👤</div>
-      <h3 data-key="card6_title">حقوق المرضى</h3>
-      <p data-key="card6_desc">معرفة الحقوق والمسؤوليات للمرضى</p>
-      <a href="patients-rights.html" class="btn" data-key="card_btn">دخول</a>
-    </div>
-
-  </div>
-</div>
-
-<!-- ✅ footer -->
-<footer>
-  <h4 data-key="footer_copy">جميع الحقوق محفوظة © 2027 الإدارة التنفيذية للصحة الرقمية في مستشفى الملك عبد العزيز</h4>
-  <h5 data-key="footer_supervisor">م.هاني مياجان</h5>
-</footer>
-
-<script src="page4.js"></script>
-
-  
+  <script src="page4.js"></script>
 </body>
 </html>
