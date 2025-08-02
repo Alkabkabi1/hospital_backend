@@ -23,7 +23,6 @@ function loadTranslations(lang) {
         }
       });
 
-      // تحديث حالة التقييم إن وجد
       const isComplete = localStorage.getItem("evalStatus") === "complete";
       const evalStatusEl = document.querySelector('[data-key="Rated"]');
       if (evalStatusEl) {
@@ -33,23 +32,36 @@ function loadTranslations(lang) {
     });
 }
 
-// تحميل الترجمة عند بدء الصفحة
-document.addEventListener("DOMContentLoaded", () => {
+// ✅ تحميل البيانات من قاعدة البيانات عند بدء الصفحة
+document.addEventListener("DOMContentLoaded", async () => {
   const lang = document.documentElement.lang || "ar";
   loadTranslations(lang);
 
-  // استرجاع البيانات عند التحميل
-  const name = localStorage.getItem('empName');
-  const role = localStorage.getItem('empRole');
-  const email = localStorage.getItem('empEmail');
-  const empID = localStorage.getItem('empID');
-  const imageData = localStorage.getItem('profileImage');
+  try {
+    const res = await fetch("/api/employees", {
+      method: "GET",
+      credentials: "include"
+    });
+    const data = await res.json();
 
-  if (name) document.getElementById('empName').value = name;
-  if (role) document.getElementById('empRole').value = role;
-  if (email) document.getElementById('empEmail').value = email;
-  if (empID) document.getElementById('empID').value = empID;
-  if (imageData) document.getElementById('profileImage').src = imageData;
+    if (!res.ok) {
+      alert(data.message || "فشل تحميل بيانات الملف الشخصي");
+      return;
+    }
+
+    document.getElementById('empName').value = data.name || "";
+    document.getElementById('empRole').value = data.position || "";
+    document.getElementById('empEmail').value = data.email || "";
+    document.getElementById('empID').value = data.employee_number || "";
+
+    const imageData = localStorage.getItem('profileImage');
+    if (imageData) {
+      document.getElementById('profileImage').src = imageData;
+    }
+
+  } catch (err) {
+    console.error("Error loading profile:", err);
+  }
 });
 
 // عند النقر على الصورة
@@ -78,20 +90,43 @@ function enableEditing() {
   document.getElementById('imageUpload').disabled = false;
 }
 
-function saveProfile() {
-  localStorage.setItem('empName', document.getElementById('empName').value);
-  localStorage.setItem('empRole', document.getElementById('empRole').value);
-  localStorage.setItem('empEmail', document.getElementById('empEmail').value);
-  localStorage.setItem('empID', document.getElementById('empID').value);
+async function saveProfile() {
+  const position = document.getElementById('empRole').value;
+  const employee_number = document.getElementById('empID').value;
+  const photo_url = localStorage.getItem('profileImage') || null;
 
-  // تحديث حالة التقييم كنموذج
-  localStorage.setItem("evalStatus", "complete");
+  try {
+    const res = await fetch("/api/employees", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        position,
+        employee_number,
+        photo_url
+      })
+    });
 
-  alert('✅ تم حفظ البيانات بنجاح!');
+    const data = await res.json();
 
-  document.getElementById('empName').disabled = true;
-  document.getElementById('empRole').disabled = true;
-  document.getElementById('empID').disabled = true;
-  document.getElementById('empEmail').disabled = true;
-  document.getElementById('imageUpload').disabled = true;
+    if (!res.ok) {
+      alert(data.message || "فشل في حفظ البيانات");
+      return;
+    }
+
+    localStorage.setItem("evalStatus", "complete");
+    alert('✅ تم حفظ البيانات بنجاح!');
+
+    document.getElementById('empName').disabled = true;
+    document.getElementById('empRole').disabled = true;
+    document.getElementById('empID').disabled = true;
+    document.getElementById('empEmail').disabled = true;
+    document.getElementById('imageUpload').disabled = true;
+
+  } catch (err) {
+    console.error("Error saving profile:", err);
+    alert("حدث خطأ أثناء حفظ البيانات");
+  }
 }
