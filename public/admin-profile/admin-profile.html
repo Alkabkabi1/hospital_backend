@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title data-key="page_title">ملف المشرف</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="admin-profile.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+      <img src="/public/icon/SB.png" alt="شعار" style="height: 100px;">
+      <span>
+        <span>مستشفى الملك عبد العزيز بمكة</span><br>
+        <small>King Abdulaziz Hospital</small>
+      </span>
+    </div>
+    <div class="header-left">
+      <a href="../home/home.html" class="header-btn"><i class="fas fa-home"></i> الرئيسية</a>
+      <a href="../Login/Login.html" class="header-btn"><i class="fas fa-sign-out-alt"></i> تسجيل خروج</a>
+      <button class="header-btn" onclick="toggleLanguage()"><i class="fas fa-globe"></i> عربي</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="grid">
+
+      <div class="card profile">
+        <img id="profileImage" src="/icon/ww.png" alt="صورة الملف الشخصي">
+        <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+        <input type="text" id="adminName" placeholder="اسم المشرف" disabled>
+        <input type="email" id="adminEmail" placeholder="البريد الإلكتروني" disabled>
+      </div>
+
+      <div class="card actions">
+        <h4>الإجراءات</h4>
+        <button onclick="location.href='../admin/admin-dashboard.html'">⚙️ لوحة التحكم</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="admin-profile.js"></script>
+</body>
+</html>
