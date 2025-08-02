@@ -59,7 +59,12 @@ router.post("/signup", (req, res) => {
 
       db.query(insertPatient, [user_id, name, email, phone], (err2, result2) => {
         if (err2) return res.status(500).json({ message: "تم إنشاء المستخدم، لكن فشل إنشاء سجل المريض", error: err2 });
-
+        req.session.user = {
+          id: user_id,  // الـ ID من جدول users
+          name,
+          email,
+          role
+        };
         res.status(201).json({ message: "تم إنشاء حساب المريض بنجاح" });
       });
     } else {
