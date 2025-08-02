@@ -44,11 +44,14 @@ const authRoutes = require("./routes/auth");
 const profileRoutes = require("./routes/profile");
 const patientHomeRoute = require("./routes/patientHome");
 const userInfoRoute = require("./routes/userInfo");
+const employeeHomeRoute = require("./routes/employeeHome");
 
 
 app.use("/api", authRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/patient-home", patientHomeRoute);
+app.use("/api/user-info", userInfoRoute);
+app.use("/api/employee-home", employeeHomeRoute);
 
 // تشغيل السيرفر
 const PORT = process.env.PORT || 3000;
