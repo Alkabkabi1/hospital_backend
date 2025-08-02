@@ -91,6 +91,8 @@ function enableEditing() {
 }
 
 async function saveProfile() {
+  const name = document.getElementById('empName').value;
+  const email = document.getElementById('empEmail').value;
   const position = document.getElementById('empRole').value;
   const employee_number = document.getElementById('empID').value;
   const photo_url = localStorage.getItem('profileImage') || null;
@@ -103,6 +105,8 @@ async function saveProfile() {
       },
       credentials: "include",
       body: JSON.stringify({
+        name,
+        email,
         position,
         employee_number,
         photo_url
@@ -116,8 +120,8 @@ async function saveProfile() {
       return;
     }
 
-    localStorage.setItem("evalStatus", "complete");
     alert('✅ تم حفظ البيانات بنجاح!');
+    localStorage.setItem("evalStatus", "complete");
 
     document.getElementById('empName').disabled = true;
     document.getElementById('empRole').disabled = true;
