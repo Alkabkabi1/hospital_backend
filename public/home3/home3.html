@@ -12,51 +12,52 @@
 
 <header class="main-header">
   <div class="logo">
-    <img src="/icon/SB.png" alt="شعار المستشفى">
+    <img src="/public/icon/SB.png" alt="شعار المستشفى">
     <span data-key="hospital_name">مستشفى الملك عبد العزيز بمكة<br><small>King Abdulaziz Hospital</small></span>
   </div>
 
   <nav class="nav">
     <ul class="dropdown">
-      <li><a href="../home/home.html" data-key="home">الرئيسية</a></li>
+      <li><a href="/public/home/home.html" data-key="home">الرئيسية</a></li>
       <li>
-        <a href="../page1/page1.html" data-key="about_hospital_arrow">عن المستشفى ▾</a>
+        <a href="/public/page1/page1.html" data-key="about_hospital_arrow">عن المستشفى ▾</a>
         <ul class="dropdown-m">
-          <li><a href="../page2/page2.html" data-key="doctors">الأطباء</a></li>
+          <li><a href="/public/page2/page2.html" data-key="doctors">الأطباء</a></li>
         </ul>
       </li>
       <li>
         <a href="#" data-key="electronic_services">خدمات إلكترونية ▾</a>
         <ul class="dropdown-m">
-          <li><a href="../page3/page3.html" data-key="staff_services">خدمات الموظفين</a></li>
-          <li><a href="../page4/page4.html" data-key="patient_services">خدمات المرضى</a></li>
+          <a href="/public/page3/page3.html" data-key="staff_services">خدمات الموظفين</a>
+
+          <li><a href="/public/page4/page4.html" data-key="patient_services">خدمات المرضى</a></li>
         </ul>
       </li>
-      <li><a href="../policies/policies.html" data-key="policies">السياسات</a></li>
-      <li><a href="../communication/communication.html" data-key="contact_us">تواصل معنا</a></li>
+      <li><a href="/policies/policies.html" data-key="policies">السياسات</a></li>
+      <li><a href="/communication/communication.html" data-key="contact_us">تواصل معنا</a></li>
     </ul>
   </nav>
 
   <div class="header-actions">
     <button class="lang-btn" onclick="toggleLanguage()"><i class="fas fa-globe"></i> عربي</button>
-    <button class="login-btn" onclick="window.location.href='/patient profile/patient profile.html'" data-key="my_profile">ملفي</button>
-    <button class="login-btn" onclick="window.location.href='/Login/Login.html'" data-key="logout">تسجيل الخروج</button>
+    <button class="login-btn" onclick="window.location.href='/patient-profile/patient-profile.html'" data-key="my_profile">ملفي</button>
+    <button class="login-btn" onclick="window.location.href='/public/Login/Login.html'" data-key="logout">تسجيل الخروج</button>
   </div>
 </header>
 
 <section class="hero-slider">
-  <div class="hero-slide active" style="background-image: url('/icon/img1-1.png');">
+  <div class="hero-slide active" style="background-image: url('/public/icon/img1-1.png');">
     <div class="hero-content">
       <h1 data-key="welcome">مرحبًا بكم في مستشفى الملك عبد العزيز</h1>
       <p data-key="global_standards">نقدم رعاية صحية بمعايير عالمية</p>
     </div>
   </div>
-  <div class="hero-slide" style="background-image: url('/icon/خلفية سوداء1.jpg');">
+  <div class="hero-slide" style="background-image: url('/public/icon/B.jpg');">
     <div class="hero-content">
       <h1 data-key="health_first">نهتم بصحتك أولاً</h1>
     </div>
   </div>
-  <div class="hero-slide" style="background-image: url('/icon/خلفية سوداء1.jpg');">
+  <div class="hero-slide" style="background-image: url('/public/icon/B.jpg');">
     <div class="hero-content">
       <h1 data-key="skilled_doctors">أطباء ذو كفاءة عالية</h1>
       <p data-key="always_serving">في خدمتك دائمًا</p>
@@ -78,7 +79,7 @@
           <button class="read-btn" data-key="read_more">اقرأ المزيد</button>
         </div>
         <div class="news-image">
-          <img src="/icon/img1.jpg" alt="خبر 1">
+          <img src="/public/icon/img1.jpg" alt="خبر 1">
         </div>
       </div>
 
@@ -91,7 +92,7 @@
           <button class="read-btn" data-key="read_more">اقرأ المزيد</button>
         </div>
         <div class="news-image">
-          <img src="/icon/news2.png" alt="المواعيد الافتراضية">
+          <img src="/public/icon/news2.png" alt="المواعيد الافتراضية">
         </div>
       </div>
     </div>
@@ -104,17 +105,17 @@
     <h2 class="section-title" data-key="quick_access">الوصول السريع</h2>
     <div class="access-cards">
       <div class="access-card">
-        <img src="/icon/img2.png" alt="خدمات الموظفين">
+        <img src="/public/icon/img2.png" alt="خدمات الموظفين">
         <h3 data-key="staff_services">خدمات الموظفين</h3>
         <button class="go-btn" onclick="window.location.href='page3.html'" data-key="go">اذهب</button>
       </div>
       <div class="access-card">
-        <img src="/icon/hmg3.png" alt="خدمات المرضى">
+        <img src="/public/icon/hmg3.png" alt="خدمات المرضى">
         <h3 data-key="patient_services">خدمات المرضى</h3>
-        <button class="go-btn" onclick="window.location.href='page4.html'" data-key="go">اذهب</button>
+        <button class="go-btn" onclick="window.location.href='/page4/page4.html'" data-key="go">اذهب</button>
       </div>
       <div class="access-card">
-        <img src="/icon/img4.png" alt="التدريب والتعليم">
+        <img src="/public/icon/img4.png" alt="التدريب والتعليم">
         <h3 data-key="training_education">التدريب والتعليم</h3>
         <button class="go-btn" onclick="window.location.href=''" data-key="go">اذهب</button>
       </div>
@@ -142,10 +143,10 @@
       <div class="footer-col">
         <h4 data-key="follow_us">تابعونا</h4>
         <div class="social-icons">
-          <a href="https://x.com/kaahmak?lang=ar"><img src="/icon/x.png" alt="X"></a>
-          <a href="#"><img src="/icon/s.png" alt="Snapchat"></a>
-          <a href="#"><img src="/icon/y.png" alt="YouTube"></a>
-          <a href="#"><img src="/icon/i.png" alt="Instagram"></a>
+          <a href="https://x.com/kaahmak?lang=ar"><img src="/public/icon/x.png" alt="X"></a>
+          <a href="#"><img src="/public/icon/s.png" alt="Snapchat"></a>
+          <a href="#"><img src="/public/icon/y.png" alt="YouTube"></a>
+          <a href="#"><img src="/public/icon/i.png" alt="Instagram"></a>
         </div>
       </div>
     </div>
