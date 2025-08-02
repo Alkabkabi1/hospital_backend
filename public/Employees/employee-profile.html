@@ -5,7 +5,7 @@
   <title data-key="page_title">ملف الموظف</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="Employee profile.css">
+  <link rel="stylesheet" href="employee-profile.css">
 </head>
 <body>
 
@@ -18,8 +18,8 @@
       </span>
     </div>
     <div class="header-left">
-      <a href="/public/home/home.html" class="header-btn"><i class="fas fa-home"></i> <span data-key="nav_home">الرئيسية</span></a>
-      <a href="/public/Login/Login.html" class="header-btn"><i class="fas fa-sign-out-alt"></i> <span data-key="nav_logout">تسجيل خروج</span></a>
+      <a href="../home/home.html" class="header-btn"><i class="fas fa-home"></i> <span data-key="nav_home">الرئيسية</span></a>
+      <a href="../Login/Login.html" class="header-btn"><i class="fas fa-sign-out-alt"></i> <span data-key="nav_logout">تسجيل خروج</span></a>
       <button class="header-btn" onclick="toggleLanguage()"><i class="fas fa-globe"></i> <span data-key="lang_btn">عربي</span></button>
     </div>
   </header>
@@ -30,11 +30,11 @@
       <div class="card">
         <h4 data-key="eval_status_title">حالة التقييم</h4>
         <p data-key="Rated"> تم التقييم </p>
-        <button class="eval-btn" onclick="window.location.href='/public/Evaluation form/Evaluation form.html'" data-key="open_eval_form">📝 فتح نموذج التقييم</button>
+        <button class="eval-btn" onclick="window.location.href='../Evaluation form/Evaluation form.html'" data-key="open_eval_form">📝 فتح نموذج التقييم</button>
       </div>
 
       <div class="card profile">
-        <img id="profileImage" src="/public/icon/ww.png" alt="صورة الملف الشخصي">
+        <img id="profileImage" src="/icon/ww.png" alt="صورة الملف الشخصي">
         <input type="file" id="imageUpload" accept="image/*" style="display: none;">
         
         <input type="text" id="empName" data-key="ph_name" placeholder="الاسم" disabled>
@@ -44,7 +44,7 @@
       </div>
       
       
-      
+     
       
 
       <div class="card actions">
@@ -79,6 +79,6 @@
   </div>
 
   <script src="lang-employee.json"></script>
-  <script src="Employee profile.js"></script>
+  <script src="employee-profile.js"></script>
 </body>
 </html>
