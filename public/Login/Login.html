@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <title data-key="login_title">تسجيل الدخول</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- ✅ مكتبة Font Awesome للأيقونات -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <!-- ✅ ربط ملف التنسيق (CSS) -->
   <link rel="stylesheet" href="Login.css">
 </head>
+
 <body>
 
   <!-- ✅ الهيدر: يحتوي على الشعار + زر اللغة + رابط للصفحة الرئيسية -->
@@ -22,10 +24,10 @@
     <div class="header-left">
       <!-- ✅ زر تبديل اللغة -->
       <button class="lang-btn"><i class="fas fa-globe"></i> عربي</button>
-      
+
       <!-- ✅ رابط للعودة إلى الصفحة الرئيسية -->
       <a href="../home/home.html" class="home-link">
-        <i class="fas fa-home"></i> 
+        <i class="fas fa-home"></i>
         <span data-key="home">الرئيسية</span>
       </a>
     </div>
@@ -51,7 +53,7 @@
         <input type="password" id="password" placeholder="كلمة المرور" data-key="password" required>
 
         <!-- زر تسجيل الدخول -->
-        <button type="submit" data-key="login_button">تسجيل الدخول</button>
+        <button type="button" onclick="login()" data-key="login_button">تسجيل الدخول</button>
       </form>
 
       <!-- ✅ روابط المساعدة -->
@@ -81,4 +83,5 @@
   <!-- ✅ ربط ملف JavaScript المسؤول عن الترجمة وتسجيل الدخول -->
   <script src="Login.js"></script>
 </body>
+
 </html>
