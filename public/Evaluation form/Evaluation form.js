@@ -35,37 +35,23 @@ function toggleLanguage() {
   applyTranslations();
 }
 
-// ترجمة قيمة تأثير الضغط
-function translateMentalImpact(value) {
-  switch (value) {
-    case "no":
-      return "لا";
-    case "yes":
-      return "نعم قليلاً";
-    case "severe":
-      return "نعم كثيراً";
-    default:
-      return "";
-  }
-}
 
-// إرسال النموذج إلى قاعدة البيانات
 async function submitForm() {
   const stressLevel = document.querySelector("input[name='stress']:checked")?.value;
-  const mentalImpact = document.querySelector("input[name='mental']:checked")?.value;
+  const mentalImpactRadio = document.querySelector("input[name='mental']:checked")?.value;
   const comment = document.querySelector("textarea")?.value || "";
 
   const checkboxes = document.querySelectorAll("input[type='checkbox']");
   const checkboxValues = Array.from(checkboxes).map(cb => cb.checked);
 
-  if (!stressLevel || !mentalImpact) {
+  if (!stressLevel || !mentalImpactRadio) {
     alert(currentLang === "ar" ? "يرجى الإجابة على جميع الأسئلة" : "Please answer all questions.");
     return;
   }
 
   const bodyData = {
     stress_level: stressLevel,
-    mental_health_impact: translateMentalImpact(mentalImpact),
+    mental_health_impact: translateMentalImpact(mentalImpactRadio),
     stress_comment: comment,
     policy_confidentiality: checkboxValues[0],
     policy_no_personal_use: checkboxValues[1],
@@ -94,6 +80,21 @@ async function submitForm() {
     alert(currentLang === "ar" ? "فشل الاتصال بالخادم" : "Server connection failed");
   }
 }
+
+function translateMentalImpact(value) {
+  // تحويل القيمة من الإنجليزية إلى ما يناسب ENUM في قاعدة البيانات
+  switch (value) {
+    case "no":
+      return "لا";
+    case "yes":
+      return "نعم قليلاً";
+    case "severe":
+      return "نعم كثيراً";
+    default:
+      return "";
+  }
+}
+
 
 // تحميل الترجمة بعد تحميل الصفحة
 document.addEventListener("DOMContentLoaded", loadTranslations);
