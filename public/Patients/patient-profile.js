@@ -29,7 +29,7 @@ window.onload = async () => {
 // ✅ حفظ البيانات المحدثة
 async function saveData() {
   const updatedData = {
-    full_name: document.getElementById("fullName").value,
+    name: document.getElementById("fullName").value,
     birth_date: document.getElementById("birthDate").value,
     blood_type: document.getElementById("bloodType").value,
     address: document.getElementById("location").value,
@@ -67,6 +67,7 @@ function enableEdit() {
   document.querySelectorAll('.info-pair input').forEach(input => input.disabled = false);
   document.getElementById('saveBtn').disabled = false;
 }
+
 
 // ✅ عرض إشعارات
 // ✅ عرض إشعارات للمريض
