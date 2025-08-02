@@ -20,8 +20,14 @@ router.get("/", (req, res) => {
   `;
 
   db.query(sql, [userId], (err, result) => {
-    if (err) return res.status(500).json({ message: "خطأ في قاعدة البيانات" });
-    if (result.length === 0) return res.status(404).json({ message: "لم يتم العثور على بيانات الموظف" });
+    if (err) {
+      console.error("❌ DB Error (GET):", err.message);
+      return res.status(500).json({ message: "خطأ في قاعدة البيانات" });
+    }
+
+    if (result.length === 0) {
+      return res.status(404).json({ message: "لم يتم العثور على بيانات الموظف" });
+    }
 
     res.json(result[0]);
   });
@@ -41,6 +47,15 @@ router.put("/", (req, res) => {
     photo_url
   } = req.body;
 
+  // ✅ طباعة البيانات التي أُرسلت من الفرونت للتشخيص
+  console.log("📥 بيانات مستلمة من الواجهة:", {
+    userId,
+    position,
+    employee_number,
+    photo_url
+  });
+
+  // ✅ تحقق من الحقول الأساسية
   if (!employee_number || !position) {
     return res.status(400).json({ message: "يرجى تعبئة الحقول المطلوبة: الرقم الوظيفي والمسمى الوظيفي" });
   }
@@ -56,7 +71,7 @@ router.put("/", (req, res) => {
 
   db.query(sql, [userId, position, employee_number, photo_url], (err, result) => {
     if (err) {
-      console.error("DB Error:", err);
+      console.error("❌ DB Error (PUT):", err.message);
       return res.status(500).json({ message: "فشل في تحديث البيانات" });
     }
 
