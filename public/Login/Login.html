@@ -4,61 +4,81 @@
   <meta charset="UTF-8">
   <title data-key="login_title">تسجيل الدخول</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- مكتبة Font Awesome للأيقونات -->
+  
+  <!-- ✅ مكتبة Font Awesome للأيقونات -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- ✅ ربط ملف التنسيق (CSS) -->
   <link rel="stylesheet" href="Login.css">
 </head>
 <body>
 
-  <!-- ✅ رأس الصفحة -->
+  <!-- ✅ الهيدر: يحتوي على الشعار + زر اللغة + رابط للصفحة الرئيسية -->
   <header class="reset-header">
     <div class="header-logo">
-      <img src="/icon/SB.png" alt="شعار المستشفى">
+      <img src="/public/icon/SB.png" alt="شعار المستشفى">
       <span>مستشفى الملك عبد العزيز بمكة<br><small>King Abdulaziz Hospital</small></span>
     </div>
     <div class="header-left">
+      <!-- ✅ زر تبديل اللغة -->
       <button class="lang-btn"><i class="fas fa-globe"></i> عربي</button>
-      <a href="../home/home.html" class="home-link"><i class="fas fa-home"></i> <span data-key="home">الرئيسية</span></a>
+      
+      <!-- ✅ رابط للعودة إلى الصفحة الرئيسية -->
+      <a href="/public/home/home.html" class="home-link">
+        <i class="fas fa-home"></i> 
+        <span data-key="home">الرئيسية</span>
+      </a>
     </div>
   </header>
 
-  <!-- ✅ نموذج تسجيل الدخول -->
+  <!-- ✅ حاوية نموذج تسجيل الدخول -->
   <div class="login-container">
     <div class="login-box">
+      <!-- ✅ أيقونة المستخدم في الأعلى -->
       <div class="icon-container">
         <div class="icon">👤</div>
       </div>
 
+      <!-- ✅ عنوان الصفحة (قابل للترجمة) -->
       <h2 data-key="login_title">تسجيل دخول</h2>
 
-      <input type="email" id="email" placeholder="البريد الإلكتروني" data-key="email">
-      <input type="password" id="password" placeholder="كلمة المرور" data-key="password">
+      <!-- ✅ نموذج تسجيل الدخول -->
+      <form id="loginForm">
+        <!-- البريد الإلكتروني -->
+        <input type="email" id="email" placeholder="البريد الإلكتروني" data-key="email" required>
 
-      <button onclick="login()" data-key="login_button">تسجيل الدخول</button>
+        <!-- كلمة المرور -->
+        <input type="password" id="password" placeholder="كلمة المرور" data-key="password" required>
 
+        <!-- زر تسجيل الدخول -->
+        <button type="submit" data-key="login_button">تسجيل الدخول</button>
+      </form>
+
+      <!-- ✅ روابط المساعدة -->
       <div class="links">
-        <p><a href="../forgot-password/forgot-password.html" data-key="forgot_password">نسيت كلمة المرور؟</a></p>
+        <p><a href="/forgot-password/forgot-password.html" data-key="forgot_password">نسيت كلمة المرور؟</a></p>
         <p>
           <span data-key="no_account">ليس لديك حساب؟</span>
-          <a href="../signup/signup.html" data-key="signup">إنشاء حساب</a>
+          <a href="/public/signup/signup.html" data-key="signup">إنشاء حساب</a>
         </p>
       </div>
     </div>
   </div>
 
-  <!-- ✅ الفوتر -->
+  <!-- ✅ الفوتر يحتوي على روابط ثابتة وحقوق -->
   <footer class="login-footer">
     <div>
       <a href="#" data-key="privacy_policy">سياسة الخصوصية</a>
       <a href="#" data-key="contact_us">اتصل بنا</a>
       <a href="#" data-key="help">المساعدة</a>
     </div>
-    <p data-key="rights_reserved">جميع الحقوق محفوظة © 2027 الادارة التنفذية للصحة الرقمية في مستشفى الملك عبد العزيز</p>
+    <p data-key="rights_reserved">
+      جميع الحقوق محفوظة © 2027 الادارة التنفذية للصحة الرقمية في مستشفى الملك عبد العزيز
+    </p>
     <p data-key="hany_miyajan">م.هاني مياجان</p>
   </footer>
 
-  <script src="language-switch-login.js"></script>
+  <!-- ✅ ربط ملف JavaScript المسؤول عن الترجمة وتسجيل الدخول -->
   <script src="Login.js"></script>
-  
 </body>
 </html>
