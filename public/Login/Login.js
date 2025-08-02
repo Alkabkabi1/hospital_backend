@@ -23,11 +23,13 @@ async function login() {
       // حفظ معلومات المستخدم مؤقتًا في localStorage
       localStorage.setItem("user", JSON.stringify(data.user));
 
-      // توجيه حسب الدور
+      // ✅ توجيه المستخدم حسب الدور
       if (data.user.role === "visitor") {
         window.location.href = "/Patients/patient-profile.html";
       } else if (data.user.role === "staff") {
         window.location.href = "/Employees/Employee-profile.html";
+      } else if (data.user.role === "admin") {
+        window.location.href = "/admin-profile/admin-profile.html";
       } else {
         alert("صلاحية غير معروفة");
       }
