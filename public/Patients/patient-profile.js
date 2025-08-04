@@ -1,8 +1,24 @@
+// ✅ تحقق من الجلسة قبل تحميل الصفحة
+fetch("/api/check-session")
+  .then(res => {
+    if (!res.ok) throw new Error();
+    return res.json();
+  })
+  .then(data => {
+    if (data.user.role !== "visitor" && data.user.role !== "admin") {
+      alert("هذه الصفحة مخصصة للمرضى فقط.");
+      window.location.href = "../home2/home2.html";
+    }
+  })
+  .catch(() => {
+    alert("يرجى تسجيل الدخول للوصول إلى الصفحة.");
+    window.location.href = "../Login/Login.html";
+  });
+
 // ✅ تحميل بيانات المريض عند فتح الصفحة
 window.onload = async () => {
   try {
     const res = await fetch("/api/profile");
-
     const data = await res.json();
 
     if (res.ok) {
@@ -68,13 +84,10 @@ function enableEdit() {
   document.getElementById('saveBtn').disabled = false;
 }
 
-
 // ✅ عرض إشعارات
-// ✅ عرض إشعارات للمريض
 function showNotifications() {
   alert("🔔 لا توجد إشعارات حالياً.\nسيتم إعلامك بأي تحديثات مستقبلية هنا.");
 }
-
 
 // ✅ تسجيل الخروج
 function logout() {
