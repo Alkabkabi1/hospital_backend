@@ -1,9 +1,9 @@
-let currentLang = localStorage.getItem("lang") || navigator.language.startsWith("en") ? "en" : "ar";
+let currentLang = localStorage.getItem("lang") || (navigator.language.startsWith("en") ? "en" : "ar");
 const translations = {};
 
 function toggleLanguage() {
   currentLang = currentLang === "ar" ? "en" : "ar";
-  localStorage.setItem("lang", currentLang); // حفظ اللغة
+  localStorage.setItem("lang", currentLang);
   updateLanguage();
   updateLangButton();
 }
@@ -23,17 +23,60 @@ function updateLanguage() {
     }
   });
 
-  // تغيير اتجاه الصفحة واللغة
   document.documentElement.setAttribute("dir", currentLang === "ar" ? "rtl" : "ltr");
   document.documentElement.setAttribute("lang", currentLang);
 }
 
-// تحميل ملف الترجمة
-fetch("lang-page4.json")
-  .then(response => response.json())
-  .then(data => {
-    Object.assign(translations, data);
-    updateLanguage();
-    updateLangButton();
-  })
-  .catch(error => console.error("خطأ في تحميل ملف الترجمة:", error));
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("lang-page4.json")
+    .then(response => response.json())
+    .then(data => {
+      Object.assign(translations, data);
+      updateLanguage();
+      updateLangButton();
+    })
+    .catch(error => console.error("خطأ في تحميل ملف الترجمة:", error));
+
+  checkSessionAndLoadServices();
+});
+
+function checkSessionAndLoadServices() {
+  fetch("/api/check-session")
+    .then(res => {
+      if (!res.ok) throw new Error("ليس لديك صلاحية");
+      return res.json();
+    })
+    .then(data => {
+      if (data.user.role !== "visitor"&& data.user.role !== "admin") {
+        alert("هذه الصفحة مخصصة للمرضى فقط.");
+        window.location.href = "../home3/home3.html";
+        return;
+      }
+
+      fetchServices();
+    })
+    .catch(() => {
+      alert("يرجى تسجيل الدخول للوصول إلى هذه الصفحة.");
+      window.location.href = "../Login/Login.html";
+    });
+}
+
+function fetchServices() {
+  fetch("/api/services")
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById("servicesGrid");
+      data.forEach(service => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="card-icon">🔹</div>
+          <h3>${service.title}</h3>
+          <p>${service.description}</p>
+          <a href="${service.link}" class="btn">دخول</a>
+        `;
+        container.appendChild(card);
+      });
+    })
+    .catch(() => alert("فشل تحميل الخدمات."));
+}
