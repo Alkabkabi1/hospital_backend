@@ -10,37 +10,25 @@ function isAdmin(req, res, next) {
 }
 
 // ✅ إضافة سياسة
-router.post("/policies", (req, res) => {
-  const {
-    title,
-    content,
-    description,
-    category,
-    icon,
-    pdf_link,
-    qr_link,
-    effective_date
-  } = req.body;
+router.post("/policies", isAdmin, (req, res) => {
+  const { title, content, description, category, icon, pdf_link, qr_link, effective_date } = req.body;
 
-  // التحقق من الحقول الأساسية
   if (!title || !description || !category || !icon) {
-    return res.status(400).json({ message: "يرجى تعبئة الحقول الأساسية: العنوان، الوصف، الفئة، الرمز" });
+    return res.status(400).json({ message: "يرجى تعبئة الحقول المطلوبة" });
   }
 
   const sql = `
-    INSERT INTO policies 
-    (title, content, description, category, icon, pdf_link, qr_link, effective_date)
+    INSERT INTO policies (title, content, description, category, icon, pdf_link, qr_link, effective_date)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `;
 
-  const values = [title, content, description, category, icon, pdf_link, qr_link, effective_date];
-
-  db.query(sql, values, (err, result) => {
+  db.query(sql, [title, content, description, category, icon, pdf_link, qr_link, effective_date], (err, result) => {
     if (err) {
       console.error("❌ خطأ في إضافة السياسة:", err);
-      return res.status(500).json({ message: "فشل في حفظ السياسة" });
+      return res.status(500).json({ message: "فشل في إضافة السياسة", error: err });
     }
-    res.status(200).json({ message: "✅ تمت إضافة السياسة بنجاح" });
+
+    res.status(201).json({ message: "✅ تمت إضافة السياسة بنجاح" });
   });
 });
 
