@@ -38,7 +38,7 @@ app.use('/api/evaluation', evaluationRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api", require("./routes/checkSession")); // هذا مهم
 app.use("/api", publicRoutes);
-app.use("/api", policyRoutes);
+app.use("/api/admin", require("./routes/policies"));
 
 
 // ✅ عرض ملفات الواجهة
