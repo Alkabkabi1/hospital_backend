@@ -32,11 +32,10 @@ const publicRoutes = require("./routes/publicData");
 app.use('/api', authRoutes);
 app.use('/api/profile', profileRoutes);
 app.use('/api/session', sessionRoutes);
-app.use('/api/check-session', sessionCheckRoutes);
 app.use("/api/employeeProfile", employeeProfile);
 app.use('/api/evaluation', evaluationRoutes);
 app.use("/api/admin", adminRoutes);
-app.use("/api/check-session", checkSessionRoutes);
+app.use("/api", require("./routes/checkSession")); // هذا مهم
 app.use("/api", publicRoutes);
 
 
