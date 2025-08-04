@@ -25,6 +25,7 @@ const evaluationRoutes = require("./routes/evaluation");
 const adminRoutes = require("./routes/admin");
 const checkSessionRoutes = require("./routes/checkSession");
 const publicRoutes = require("./routes/publicData");
+const policiesRoutes = require("./routes/policies");
 
 
 
@@ -37,6 +38,7 @@ app.use('/api/evaluation', evaluationRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api", require("./routes/checkSession")); // هذا مهم
 app.use("/api", publicRoutes);
+app.use("/api/policies", policiesRoutes);
 
 
 // ✅ عرض ملفات الواجهة
