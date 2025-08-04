@@ -2,21 +2,18 @@ const express = require("express");
 const router = express.Router();
 const db = require("../db");
 
-// ✅ جلب جميع السياسات (متاحة للجميع)
+// ✅ عرض السياسات للجميع
 router.get("/policies", (req, res) => {
-  const sql = "SELECT * FROM policies ORDER BY id DESC";
-
-  db.query(sql, (err, results) => {
+  db.query("SELECT * FROM policies ORDER BY id DESC", (err, results) => {
     if (err) {
       console.error("❌ فشل في جلب السياسات:", err);
       return res.status(500).json({ message: "حدث خطأ أثناء جلب السياسات" });
     }
-
     res.json(results);
   });
 });
 
-// ✅ جلب الخدمات حسب نوع المستخدم (يدعم الفصل إلى جدولين)
+// ✅ عرض الخدمات حسب الدور
 router.get("/services", (req, res) => {
   const role = req.session?.user?.role;
 
@@ -36,7 +33,6 @@ router.get("/services", (req, res) => {
   } else if (role === "staff") {
     sql = "SELECT * FROM staff_services ORDER BY created_at DESC";
   } else {
-    // visitor = patients
     sql = "SELECT * FROM patient_services ORDER BY created_at DESC";
   }
 
@@ -49,5 +45,6 @@ router.get("/services", (req, res) => {
     res.json(results);
   });
 });
+
 
 module.exports = router;
