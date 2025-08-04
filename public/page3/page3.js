@@ -61,28 +61,28 @@ function checkSessionAndLoadServices() {
     });
 }
 
-function fetchServices(role) {
-  fetch("/api/services")
+function fetchServices() {
+  fetch("/api/services",{ credentials: "include" })
     .then(res => res.json())
     .then(data => {
-      const container = document.querySelector(".grid");
+      const container = document.querySelector(".grid") || document.getElementById("servicesGrid");
 
-      data
-        .filter(service => {
-          if (role === "staff") return service.target === "staff";
-          return true; // admin sees all
-        })
-        .forEach(service => {
-          const card = document.createElement("div");
-          card.className = "card";
-          card.innerHTML = `
-            <div class="card-icon">🔹</div>
-            <h3>${service.title}</h3>
-            <p>${service.description}</p>
-            <a href="${service.link}" class="btn">دخول</a>
-          `;
-          container.appendChild(card);
-        });
+      if (!Array.isArray(data)) {
+        alert("لم يتم العثور على خدمات.");
+        return;
+      }
+
+      data.forEach(service => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="card-icon">🔹</div>
+          <h3>${service.title}</h3>
+          <p>${service.description}</p>
+          <a href="${service.link}" class="btn">دخول</a>
+        `;
+        container.appendChild(card);
+      });
     })
     .catch(() => alert("فشل تحميل الخدمات."));
 }
