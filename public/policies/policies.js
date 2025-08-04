@@ -84,3 +84,35 @@ document.querySelectorAll("[data-key]").forEach(el => {
     el.innerHTML = translations[lang][key];
   }
 });
+// ⬅️ بعد DOMContentLoaded العادي
+document.addEventListener("DOMContentLoaded", () => {
+  fetchPolicies(); // ⬅️ سحب السياسات من قاعدة البيانات
+});
+
+function fetchPolicies() {
+  fetch("/api/policies")
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById("cardContainer");
+
+      data.forEach(policy => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.setAttribute("data-category", policy.category || "إدارية");
+
+        card.innerHTML = `
+          <div class="icon">${policy.icon || "📄"}</div>
+          <h4>${policy.title}</h4>
+          <p>${policy.description || policy.content}</p>
+          <div class="tag">${policy.category}</div>
+          <div class="tools">
+            <a href="#" class="view-btn">👁️</a>
+            <a href="${policy.pdf_link}" target="_blank">📄</a>
+            <a href="${policy.qr_link}" target="_blank">🔳</a>
+          </div>
+        `;
+        container.appendChild(card); // ✅ يضيفها بعد السياسات الأصلية
+      });
+    })
+    .catch(() => alert("حدث خطأ في تحميل السياسات."));
+}
