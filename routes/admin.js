@@ -32,26 +32,35 @@ router.post("/policies", isAdmin, (req, res) => {
   });
 });
 
-// ✅ إضافة خدمة جديدة
+// ✅ إضافة خدمة جديدة (حسب target يتم تحديد الجدول)
 router.post("/services", isAdmin, (req, res) => {
-  const { title, description, link, target } = req.body;
+  const { title, description, link } = req.body;
+  const type = req.query.type; // 👈 نحصل على نوع الخدمة من الكويري سترينق
 
-  if (!title || !description || !link || !target) {
+  if (!title || !description || !link || !type) {
     return res.status(400).json({ message: "يرجى تعبئة جميع الحقول الخاصة بالخدمة" });
   }
 
-  const sql = `
-    INSERT INTO services (title, description, link, target)
-    VALUES (?, ?, ?, ?)
-  `;
+  let table;
+  if (type === "staff") {
+    table = "staff_services";
+  } else if (type === "patients") {
+    table = "patient_services";
+  } else {
+    return res.status(400).json({ message: "نوع الفئة غير صالح" });
+  }
 
-  db.query(sql, [title, description, link, target], (err, result) => {
+  const sql = `INSERT INTO ${table} (title, description, link) VALUES (?, ?, ?)`;
+
+  db.query(sql, [title, description, link], (err, result) => {
     if (err) {
-      console.error("خطأ في إضافة الخدمة:", err);
+      console.error("❌ فشل في إضافة الخدمة:", err);
       return res.status(500).json({ message: "فشل في إضافة الخدمة", error: err });
     }
+
     res.status(201).json({ message: "تمت إضافة الخدمة بنجاح" });
   });
 });
+
 
 module.exports = router;
