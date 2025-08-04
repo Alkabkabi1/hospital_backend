@@ -62,34 +62,27 @@ function checkSessionAndLoadServices() {
 }
 
 function fetchServices() {
-  fetch("/api/check-session")
+  fetch("/api/services",{ credentials: "include" })
     .then(res => res.json())
     .then(data => {
-      const role = data.user.role;
+      const container = document.querySelector(".grid") || document.getElementById("servicesGrid");
 
-      fetch("/api/services")
-        .then(res => res.json())
-        .then(services => {
-          const container = document.getElementById("servicesGrid");
+      if (!Array.isArray(data)) {
+        alert("لم يتم العثور على خدمات.");
+        return;
+      }
 
-          services
-            .filter(service => {
-              if (role === "visitor") return service.target === "patients";
-              if (role === "staff") return service.target === "staff";
-              return true; // admin يشوف الكل
-            })
-            .forEach(service => {
-              const card = document.createElement("div");
-              card.className = "card";
-              card.innerHTML = `
-                <div class="card-icon">🔹</div>
-                <h3>${service.title}</h3>
-                <p>${service.description}</p>
-                <a href="${service.link}" class="btn">دخول</a>
-              `;
-              container.appendChild(card);
-            });
-        });
+      data.forEach(service => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="card-icon">🔹</div>
+          <h3>${service.title}</h3>
+          <p>${service.description}</p>
+          <a href="${service.link}" class="btn">دخول</a>
+        `;
+        container.appendChild(card);
+      });
     })
     .catch(() => alert("فشل تحميل الخدمات."));
 }
