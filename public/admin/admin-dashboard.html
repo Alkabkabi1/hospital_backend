@@ -23,7 +23,7 @@
     </div>
   </header>
 
-  <div class="container">
+ <div class="container">
     <h2>لوحة تحكم المدير</h2>
     <div class="grid">
       <!-- ✅ إضافة سياسة -->
@@ -31,7 +31,17 @@
         <h4>إضافة سياسة جديدة</h4>
         <form id="policyForm">
           <input type="text" id="policyTitle" placeholder="عنوان السياسة" required>
-          <textarea id="policyContent" placeholder="محتوى السياسة" required></textarea>
+          <textarea id="policyContent" placeholder="المحتوى الكامل للسياسة" required></textarea>
+          <textarea id="policyDescription" placeholder="وصف مختصر للسياسة" required></textarea>
+          <!-- ✅ قائمة منسدلة للفئة -->
+          <select id="policyCategory" required>
+            <option value="">اختر الفئة</option>
+            <option value="إدارية">إدارية</option>
+            <option value="طبية">طبية</option>
+          </select>
+          <input type="text" id="policyIcon" placeholder="رمز تعبيري أو أيقونة (🩺 👨‍⚕️ ...)" required>
+          <input type="text" id="policyPDF" placeholder="رابط ملف PDF">
+          <input type="text" id="policyQR" placeholder="رابط QR إن وجد">
           <input type="date" id="policyDate">
           <button type="submit">➕ إضافة السياسة</button>
         </form>
