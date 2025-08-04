@@ -75,7 +75,6 @@ function fetchPolicies() {
 
 function displayPolicies(policies) {
   const container = document.getElementById("cardContainer");
-  container.innerHTML = "";
 
   policies.forEach(policy => {
     const card = document.createElement("div");
