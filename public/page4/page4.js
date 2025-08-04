@@ -62,21 +62,34 @@ function checkSessionAndLoadServices() {
 }
 
 function fetchServices() {
-  fetch("/api/services")
+  fetch("/api/check-session")
     .then(res => res.json())
     .then(data => {
-      const container = document.getElementById("servicesGrid");
-      data.forEach(service => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
-          <div class="card-icon">🔹</div>
-          <h3>${service.title}</h3>
-          <p>${service.description}</p>
-          <a href="${service.link}" class="btn">دخول</a>
-        `;
-        container.appendChild(card);
-      });
+      const role = data.user.role;
+
+      fetch("/api/services")
+        .then(res => res.json())
+        .then(services => {
+          const container = document.getElementById("servicesGrid");
+
+          services
+            .filter(service => {
+              if (role === "visitor") return service.target === "patients";
+              if (role === "staff") return service.target === "staff";
+              return true; // admin يشوف الكل
+            })
+            .forEach(service => {
+              const card = document.createElement("div");
+              card.className = "card";
+              card.innerHTML = `
+                <div class="card-icon">🔹</div>
+                <h3>${service.title}</h3>
+                <p>${service.description}</p>
+                <a href="${service.link}" class="btn">دخول</a>
+              `;
+              container.appendChild(card);
+            });
+        });
     })
     .catch(() => alert("فشل تحميل الخدمات."));
 }
