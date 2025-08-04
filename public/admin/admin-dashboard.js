@@ -57,17 +57,23 @@ function submitService() {
   const title = document.getElementById("serviceTitle").value.trim();
   const desc = document.getElementById("serviceDesc").value.trim();
   const link = document.getElementById("serviceLink").value.trim();
-  const target = document.getElementById("serviceTarget").value;
+  const target = document.getElementById("serviceTarget").value; // staff أو patients
+  console.log("title:", `"${title}"`);
+  console.log("desc:", `"${desc}"`);
+  console.log("link:", `"${link}"`);
+  console.log("target:", `"${target}"`);
+
 
   if (!title || !desc || !link || !target) {
     alert("يرجى تعبئة جميع الحقول الخاصة بالخدمة.");
     return;
   }
 
-  fetch("/api/admin/services", {
+  // ✅ إرسال الخدمة للجدول الصحيح باستخدام ?type=
+  fetch(`/api/admin/services?type=${target}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ title, description: desc, link, target })
+    body: JSON.stringify({ title, description: desc, link })
   })
     .then(res => res.json())
     .then(data => {
