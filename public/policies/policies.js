@@ -61,58 +61,91 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // عرض تفاصيل البطاقة في نافذة منبثقة
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("view-btn")) {
-    e.preventDefault();
-    const card = e.target.closest(".card");
-    const title = card.querySelector("h4").innerText;
-    const desc = card.querySelector("p").innerText;
-    document.getElementById("modalTitle").innerText = title;
-    document.getElementById("modalDesc").innerText = desc;
-    document.getElementById("modal").style.display = "block";
-  }
-});
-
-// إغلاق النافذة المنبثقة
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-}
-
-document.querySelectorAll("[data-key]").forEach(el => {
-  const key = el.getAttribute("data-key");
-  if (translations[lang][key]) {
-    el.innerHTML = translations[lang][key];
-  }
-});
-// ⬅️ بعد DOMContentLoaded العادي
 document.addEventListener("DOMContentLoaded", () => {
-  fetchPolicies(); // ⬅️ سحب السياسات من قاعدة البيانات
+  fetchPolicies();
+  setupTranslation();
 });
 
 function fetchPolicies() {
   fetch("/api/policies")
     .then(res => res.json())
+    .then(policies => displayPolicies(policies))
+    .catch(() => alert("❌ فشل في تحميل السياسات"));
+}
+
+function displayPolicies(policies) {
+  const container = document.getElementById("cardContainer");
+  container.innerHTML = "";
+
+  policies.forEach(policy => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.setAttribute("data-category", policy.category);
+
+    card.innerHTML = `
+      <div class="icon">${policy.icon}</div>
+      <h4>${policy.title}</h4>
+      <p>${policy.description}</p>
+      <div class="tag">${policy.category}</div>
+      <div class="tools">
+        <a href="#" class="view-btn">👁️</a>
+        ${policy.pdf_link ? `<a href="${policy.pdf_link}" target="_blank">📄</a>` : ""}
+        ${policy.qr_link ? `<a href="${policy.qr_link}" target="_blank">🔳</a>` : ""}
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function setupTranslation() {
+  const lang = localStorage.getItem("language") || "ar";
+
+  fetch("/public/policies/lang-policies.json")
+    .then(res => res.json())
     .then(data => {
-      const container = document.getElementById("cardContainer");
-
-      data.forEach(policy => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.setAttribute("data-category", policy.category || "إدارية");
-
-        card.innerHTML = `
-          <div class="icon">${policy.icon || "📄"}</div>
-          <h4>${policy.title}</h4>
-          <p>${policy.description || policy.content}</p>
-          <div class="tag">${policy.category}</div>
-          <div class="tools">
-            <a href="#" class="view-btn">👁️</a>
-            <a href="${policy.pdf_link}" target="_blank">📄</a>
-            <a href="${policy.qr_link}" target="_blank">🔳</a>
-          </div>
-        `;
-        container.appendChild(card); // ✅ يضيفها بعد السياسات الأصلية
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (data[lang] && data[lang][key]) {
+          el.innerHTML = data[lang][key];
+        }
       });
-    })
-    .catch(() => alert("حدث خطأ في تحميل السياسات."));
+    });
+
+  // الفلاتر
+  document.getElementById("filterMenu").addEventListener("click", (e) => {
+    const li = e.target.closest("li");
+    if (!li) return;
+
+    document.querySelectorAll("#filterMenu li").forEach(el => el.classList.remove("active"));
+    li.classList.add("active");
+
+    const filter = li.getAttribute("data-filter");
+    document.querySelectorAll(".card").forEach(card => {
+      card.style.display = (filter === "all" || card.getAttribute("data-category") === filter)
+        ? "block" : "none";
+    });
+  });
+
+  // عرض التفاصيل
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("view-btn")) {
+      e.preventDefault();
+      const card = e.target.closest(".card");
+      const title = card.querySelector("h4").innerText;
+      const desc = card.querySelector("p").innerText;
+      document.getElementById("modalTitle").innerText = title;
+      document.getElementById("modalDesc").innerText = desc;
+      document.getElementById("modal").style.display = "block";
+    }
+  });
+
+  window.closeModal = function () {
+    document.getElementById("modal").style.display = "none";
+  };
+
+  window.toggleLanguage = function () {
+    const newLang = (lang === "ar") ? "en" : "ar";
+    localStorage.setItem("language", newLang);
+    location.reload();
+  };
 }
