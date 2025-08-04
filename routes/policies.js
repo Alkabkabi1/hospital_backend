@@ -1,90 +1,50 @@
-document.addEventListener("DOMContentLoaded", () => {
-  checkAdminAccess();
+const express = require("express");
+const router = express.Router();
+const db = require("../db");
 
-  const policyForm = document.getElementById("policyForm");
-  const serviceForm = document.getElementById("serviceForm");
-
-  policyForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    submitPolicy();
-  });
-
-  serviceForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    submitService();
+// ✅ جلب كل السياسات
+router.get("/policies", (req, res) => {
+  const sql = "SELECT * FROM policies ORDER BY id DESC";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error("❌ خطأ في جلب السياسات:", err);
+      return res.status(500).json({ message: "حدث خطأ أثناء جلب السياسات" });
+    }
+    res.status(200).json(results);
   });
 });
 
-function checkAdminAccess() {
-  fetch("/api/check-session")
-    .then(res => res.json())
-    .then(data => {
-      if (data.user?.role !== "admin") {
-        alert("هذه الصفحة مخصصة للمشرف فقط.");
-        window.location.href = "/public/home/home.html";
-      }
-    })
-    .catch(() => {
-      alert("حدث خطأ أثناء التحقق من الجلسة.");
-      window.location.href = "/public/home/home.html";
-    });
-}
+// ✅ إضافة سياسة جديدة
+router.post("/policies", (req, res) => {
+  const {
+    title,
+    content,
+    description,
+    category,
+    icon,
+    pdf_link,
+    qr_link,
+    effective_date
+  } = req.body;
 
-function submitPolicy() {
-  const title = document.getElementById("policyTitle").value.trim();
-  const description = document.getElementById("policyDescription").value.trim();
-  const category = document.getElementById("policyCategory").value.trim();
-  const icon = document.getElementById("policyIcon").value.trim();
-  const pdf_link = document.getElementById("policyPDF").value.trim();
-  const qr_link = document.getElementById("policyQR").value.trim();
-  const effective_date = document.getElementById("policyDate").value;
-
-  if (!title || !description || !category) {
-    alert("يرجى تعبئة الحقول الإلزامية: العنوان والوصف والتصنيف.");
-    return;
+  // تحقق من الحقول الأساسية
+  if (!title || !content || !description || !category || !icon) {
+    return res.status(400).json({ message: "يرجى تعبئة العنوان والمحتوى والوصف والفئة والرمز" });
   }
 
-  fetch("/api/admin/policies", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      title,
-      description,
-      category,
-      icon: icon || "📄",
-      pdf_link,
-      qr_link,
-      effective_date
-    })
-  })
-    .then(res => res.json())
-    .then(data => {
-      alert(data.message || "تمت إضافة السياسة بنجاح.");
-      document.getElementById("policyForm").reset();
-    })
-    .catch(() => alert("حدث خطأ أثناء إرسال السياسة."));
-}
+  const sql = `
+    INSERT INTO policies 
+    (title, content, description, category, icon, pdf_link, qr_link, effective_date)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+  `;
 
-function submitService() {
-  const title = document.getElementById("serviceTitle").value.trim();
-  const desc = document.getElementById("serviceDesc").value.trim();
-  const link = document.getElementById("serviceLink").value.trim();
-  const target = document.getElementById("serviceTarget").value;
+  db.query(sql, [title, content, description, category, icon, pdf_link, qr_link, effective_date], (err, result) => {
+    if (err) {
+      console.error("❌ خطأ في إضافة السياسة:", err);
+      return res.status(500).json({ message: "فشل في حفظ السياسة" });
+    }
+    res.status(200).json({ message: "✅ تمت إضافة السياسة بنجاح" });
+  });
+});
 
-  if (!title || !desc || !link || !target) {
-    alert("يرجى تعبئة جميع الحقول الخاصة بالخدمة.");
-    return;
-  }
-
-  fetch("/api/admin/services", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ title, description: desc, link, target })
-  })
-    .then(res => res.json())
-    .then(data => {
-      alert(data.message || "تمت إضافة الخدمة بنجاح.");
-      document.getElementById("serviceForm").reset();
-    })
-    .catch(() => alert("حدث خطأ أثناء إرسال الخدمة."));
-}
+module.exports = router;
