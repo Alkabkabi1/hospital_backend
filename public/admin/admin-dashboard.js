@@ -1,84 +1,90 @@
 document.addEventListener("DOMContentLoaded", () => {
-  checkAdminAccess();
+  const user = JSON.parse(localStorage.getItem("user"));
 
-  const policyForm = document.getElementById("policyForm");
-  const serviceForm = document.getElementById("serviceForm");
+  if (!user || user.role !== "admin") {
+    alert("غير مصرح لك بالدخول هنا");
+    window.location.href = "../Login/Login.html";
+    return;
+  }
 
-  policyForm.addEventListener("submit", function (e) {
+  // ✅ تحميل صورة من localStorage إذا موجودة
+  const savedImage = localStorage.getItem("adminProfileImage");
+  if (savedImage) {
+    const profileImage = document.getElementById("profileImage");
+    if (profileImage) profileImage.src = savedImage;
+  }
+
+  // ✅ التعامل مع رفع صورة جديدة
+  const profileImage = document.getElementById("profileImage");
+  const imageUpload = document.getElementById("imageUpload");
+
+  if (profileImage && imageUpload) {
+    profileImage.addEventListener("click", () => {
+      imageUpload.click();
+    });
+
+    imageUpload.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (file && file.type.startsWith("image/")) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const imageUrl = reader.result;
+          profileImage.src = imageUrl;
+          localStorage.setItem("adminProfileImage", imageUrl);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  }
+
+  // ✅ عند الضغط على زر إضافة السياسة
+  document.getElementById("policyForm").addEventListener("submit", function (e) {
     e.preventDefault();
     submitPolicy();
   });
 
-  serviceForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    submitService();
-  });
-});
-
-function checkAdminAccess() {
-  fetch("/api/check-session")
-    .then(res => res.json())
-    .then(data => {
-      if (data.user?.role !== "admin") {
-        alert("هذه الصفحة مخصصة للمشرف فقط.");
-        window.location.href = "/public/home/home.html";
-      }
-    })
-    .catch(() => {
-      alert("حدث خطأ أثناء التحقق من الجلسة.");
-      window.location.href = "/public/home/home.html";
-    });
-}
-
-function submitPolicy() {
+  // ✅ دالة إرسال السياسة إلى السيرفر
+  function submitPolicy() {
   const title = document.getElementById("policyTitle").value.trim();
   const content = document.getElementById("policyContent").value.trim();
-  const date = document.getElementById("policyDate").value;
+  const description = document.getElementById("policyDescription").value.trim();
+  const category = document.getElementById("policyCategory").value;
+  const icon = document.getElementById("policyIcon").value.trim();
+  const pdf_link = document.getElementById("policyPDF").value.trim();
+  const qr_link = document.getElementById("policyQR").value.trim();
+  const effective_date = document.getElementById("policyDate").value;
 
-  if (!title || !content) {
-    alert("يرجى تعبئة جميع الحقول الخاصة بالسياسة.");
+  if (!title || !description || !category || !icon) {
+    alert("❌ يرجى تعبئة الحقول المطلوبة.");
     return;
   }
+
+  const payload = {
+    title,
+    content,
+    description,
+    category,
+    icon,
+    pdf_link,
+    qr_link,
+    effective_date
+  };
+
+  console.log("🚀 إرسال السياسة:", payload); // تتبع التصحيح
 
   fetch("/api/admin/policies", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ title, content, effective_date: date })
+    body: JSON.stringify(payload)
   })
     .then(res => res.json())
     .then(data => {
-      alert(data.message || "تمت إضافة السياسة بنجاح.");
+      alert(data.message || "✅ تمت إضافة السياسة بنجاح.");
       document.getElementById("policyForm").reset();
     })
-    .catch(() => alert("حدث خطأ أثناء إرسال السياسة."));
-}
-
-function submitService() {
-  const title = document.getElementById("serviceTitle").value.trim();
-  const desc = document.getElementById("serviceDesc").value.trim();
-  const link = document.getElementById("serviceLink").value.trim();
-  const target = document.getElementById("serviceTarget").value; // staff أو patients
-  console.log("title:", `"${title}"`);
-  console.log("desc:", `"${desc}"`);
-  console.log("link:", `"${link}"`);
-  console.log("target:", `"${target}"`);
-
-
-  if (!title || !desc || !link || !target) {
-    alert("يرجى تعبئة جميع الحقول الخاصة بالخدمة.");
-    return;
+    .catch(err => {
+      console.error("❌ خطأ في الإرسال:", err);
+      alert("❌ حدث خطأ أثناء إرسال السياسة.");
+    });
   }
-
-  // ✅ إرسال الخدمة للجدول الصحيح باستخدام ?type=
-  fetch(`/api/admin/services?type=${target}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ title, description: desc, link })
-  })
-    .then(res => res.json())
-    .then(data => {
-      alert(data.message || "تمت إضافة الخدمة بنجاح.");
-      document.getElementById("serviceForm").reset();
-    })
-    .catch(() => alert("حدث خطأ أثناء إرسال الخدمة."));
-}
+})
