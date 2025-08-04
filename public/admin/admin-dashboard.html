@@ -26,7 +26,7 @@
   <div class="container">
     <h2>لوحة تحكم المدير</h2>
     <div class="grid">
-      <!-- إضافة سياسة -->
+      <!-- ✅ إضافة سياسة -->
       <div class="card">
         <h4>إضافة سياسة جديدة</h4>
         <form id="policyForm">
@@ -37,18 +37,21 @@
         </form>
       </div>
 
-      <!-- إضافة خدمة -->
+      <!-- ✅ إضافة خدمة -->
       <div class="card">
         <h4>إضافة خدمة</h4>
         <form id="serviceForm">
           <input type="text" id="serviceTitle" placeholder="عنوان الخدمة" required>
           <textarea id="serviceDesc" placeholder="وصف الخدمة" required></textarea>
           <input type="text" id="serviceLink" placeholder="رابط الخدمة" required>
+          
+          <!-- ✅ تحديد الفئة بدقة: staff أو patients -->
           <select id="serviceTarget" required>
-            <option value="">اختر الجمهور</option>
+            <option value="">اختر الفئة المستهدفة</option>
             <option value="staff">خدمة للموظفين</option>
-            <option value="visitor">خدمة للمرضى</option>
+            <option value="patients">خدمة للمرضى</option>
           </select>
+          
           <button type="submit">➕ إضافة الخدمة</button>
         </form>
       </div>
