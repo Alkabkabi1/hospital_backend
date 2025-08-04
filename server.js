@@ -24,6 +24,7 @@ const employeeProfile = require("./routes/employeeProfile");
 const evaluationRoutes = require("./routes/evaluation");
 const adminRoutes = require("./routes/admin");
 const checkSessionRoutes = require("./routes/checkSession");
+const publicRoutes = require("./routes/publicData");
 
 
 
@@ -36,6 +37,7 @@ app.use("/api/employeeProfile", employeeProfile);
 app.use('/api/evaluation', evaluationRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/check-session", checkSessionRoutes);
+app.use("/api", publicRoutes);
 
 
 // ✅ عرض ملفات الواجهة
