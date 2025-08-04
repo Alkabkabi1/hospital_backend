@@ -16,7 +16,7 @@ router.get("/policies", (req, res) => {
   });
 });
 
-// ✅ جلب الخدمات حسب نوع المستخدم (مع دعم الأدمن)
+// ✅ جلب الخدمات حسب نوع المستخدم (يدعم الفصل إلى جدولين)
 router.get("/services", (req, res) => {
   const role = req.session?.user?.role;
 
@@ -25,18 +25,22 @@ router.get("/services", (req, res) => {
   }
 
   let sql;
-  let values;
 
-  // ✅ لو الأدمن: يرجع كل الخدمات
   if (role === "admin") {
-    sql = "SELECT * FROM services ORDER BY id DESC";
-    values = [];
+    sql = `
+      SELECT id, title, description, link, created_at, 'staff' AS target FROM staff_services
+      UNION
+      SELECT id, title, description, link, created_at, 'patients' AS target FROM patient_services
+      ORDER BY created_at DESC
+    `;
+  } else if (role === "staff") {
+    sql = "SELECT * FROM staff_services ORDER BY created_at DESC";
   } else {
-    sql = "SELECT * FROM services WHERE target = ? ORDER BY id DESC";
-    values = [role];
+    // visitor = patients
+    sql = "SELECT * FROM patient_services ORDER BY created_at DESC";
   }
 
-  db.query(sql, values, (err, results) => {
+  db.query(sql, (err, results) => {
     if (err) {
       console.error("❌ فشل في جلب الخدمات:", err);
       return res.status(500).json({ message: "حدث خطأ أثناء جلب الخدمات" });
