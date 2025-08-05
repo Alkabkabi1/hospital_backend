@@ -6,7 +6,9 @@
       "admin_name_placeholder": "اسم المشرف",
       "admin_email_placeholder": "البريد الإلكتروني",
       "actions_title": "الإجراءات",
-      "dashboard_button": "⚙️ لوحة التحكم"
+      "dashboard_button": "⚙️ لوحة التحكم",
+          "messages_button": "📬 عرض رسائل التواصل"
+
     },
     "en": {
       "page_title": "Admin Profile",
@@ -15,6 +17,8 @@
       "admin_name_placeholder": "Admin Name",
       "admin_email_placeholder": "Email Address",
       "actions_title": "Actions",
-      "dashboard_button": "⚙️ Dashboard"
+      "dashboard_button": "⚙️ Dashboard",
+          "messages_button": "📬 View Messages"
+
     }
 }
