@@ -56,5 +56,16 @@ router.post("/services", isAdmin, (req, res) => {
     res.status(201).json({ message: "تمت إضافة الخدمة بنجاح" });
   });
 });
+// ✅ جلب رسائل التواصل (فقط للإدمن)
+router.get("/messages", isAdmin, (req, res) => {
+  const sql = "SELECT * FROM contact_messages ORDER BY created_at DESC";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error("❌ فشل في جلب رسائل التواصل:", err);
+      return res.status(500).json({ message: "حدث خطأ أثناء جلب الرسائل" });
+    }
+    res.json(results);
+  });
+});
 
 module.exports = router;
