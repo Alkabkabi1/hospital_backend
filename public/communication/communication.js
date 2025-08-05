@@ -1,5 +1,4 @@
 let currentLang = "ar";
-
 const translations = {};
 
 function loadTranslations() {
@@ -10,15 +9,16 @@ function loadTranslations() {
       applyTranslations();
     });
 }
+
 function applyTranslations() {
   document.querySelectorAll("[data-key]").forEach((element) => {
     const key = element.getAttribute("data-key");
     const value = translations[currentLang]?.[key];
     if (value) {
       if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
-        element.placeholder = value; // ✔ تحديث placeholder
+        element.placeholder = value;
       } else {
-        element.textContent = value; // ✔ تحديث النص العادي
+        element.textContent = value;
       }
     }
   });
@@ -42,25 +42,38 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const message = document.getElementById("message").value.trim();
+    const name = this.name.value.trim();
+    const email = this.email.value.trim();
+    const message = this.message.value.trim();
 
-    if (!name || !email || !phone || !message) {
+    // تحقق من الحقول
+    if (!name || !email || !message) {
       formMessage.textContent = translations[currentLang]["error_message"];
       formMessage.style.color = "#d60000";
       return;
     }
 
-    // عرض رسالة نجاح وهمية
-    formMessage.textContent = translations[currentLang]["success_message"];
-    formMessage.style.color = "#20a153";
+    // إرسال للباك إند
+    fetch("/api/communication/send-message", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message })
+    })
+      .then(res => res.json())
+      .then(data => {
+        formMessage.textContent = data.message;
+        formMessage.style.color = data.message.includes("تم") ? "#20a153" : "#d60000";
 
-    // إعادة تعيين النموذج بعد 3 ثوانٍ
-    setTimeout(() => {
-      form.reset();
-      formMessage.textContent = "";
-    }, 3000);
+        if (data.message.includes("تم")) {
+          setTimeout(() => {
+            form.reset();
+            formMessage.textContent = "";
+          }, 3000);
+        }
+      })
+      .catch(() => {
+        formMessage.textContent = "حدث خطأ أثناء إرسال الرسالة";
+        formMessage.style.color = "#d60000";
+      });
   });
 });
