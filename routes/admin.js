@@ -44,8 +44,9 @@ router.post("/services", isAdmin, (req, res) => {
 
   let table;
   if (type === "staff") table = "staff_services";
-  else if (type === "patients") table = "patient_services";
+  else if (type === "visitor") table = "patient_services"; // ✅ تم التعديل هنا
   else return res.status(400).json({ message: "نوع الفئة غير صالح" });
+
 
   const sql = `INSERT INTO ${table} (title, description, link) VALUES (?, ?, ?)`;
   db.query(sql, [title, description, link], (err) => {
