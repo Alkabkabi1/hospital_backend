@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title data-key="page_title">رسائل التواصل</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="admin-messages.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="/icon/SB.png" alt="شعار المستشفى">
+    <span>
+      <span>مستشفى الملك عبد العزيز بمكة</span><br>
+      <span>King Abdulaziz Hospital</span>
+    </span>
+  </div>
+  <div class="header-left">
+    <button class="lang-btn" onclick="toggleLanguage()">
+      <i class="fas fa-globe"></i> <span data-key="lang_btn">عربي</span>
+    </button>
+    <a href="../admin/admin-dashboard.html" class="back-arrow" title="العودة للوحة التحكم">←</a>
+  </div>
+</header>
+
+<div class="main-content">
+  <aside class="sidebar">
+    <h3 data-key="filter_title">أنواع الرسائل</h3>
+    <ul id="filterMenu">
+      <li class="active" data-filter="all"><span data-key="filter_all">📁 الكل</span></li>
+      <li data-filter="patients"><span data-key="filter_patients">👨‍⚕️ من المرضى</span></li>
+      <li data-filter="visitors"><span data-key="filter_visitors">🧑‍💼 من الزوار</span></li>
+    </ul>
+  </aside>
+
+  <div class="cards" id="cardContainer">
+    <!-- الرسائل تظهر هنا -->
+  </div>
+</div>
+
+<!-- نافذة التفاصيل -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">✖</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+  </div>
+</div>
+
+<footer>
+  <h4 data-key="footer_text">جميع الحقوق محفوظة © 2027 الإدارة التنفيذية للصحة الرقمية في مستشفى الملك عبد العزيز</h4>
+  <h5 data-key="footer_supervisor">م.هاني مياجان</h5>
+</footer>
+
+<script src="admin-messages.js"></script>
+</body>
+</html>
