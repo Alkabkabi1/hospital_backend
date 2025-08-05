@@ -1,0 +1,26 @@
+{
+  "ar": {
+    "page_title": "رسائل التواصل",
+    "filter_title": "أنواع الرسائل",
+    "filter_all": "📁 الكل",
+    "filter_patients": "👨‍⚕️ من المرضى",
+    "filter_visitors": "🧑‍💼 من الزوار",
+    "no_messages": "لا توجد رسائل حتى الآن.",
+    "view_details": "👁️",
+    "footer_text": "جميع الحقوق محفوظة © 2027 الإدارة التنفيذية للصحة الرقمية في مستشفى الملك عبد العزيز",
+    "footer_supervisor": "م.هاني مياجان",
+    "lang_btn": "عربي"
+  },
+  "en": {
+    "page_title": "Contact Messages",
+    "filter_title": "Message Types",
+    "filter_all": "📁 All",
+    "filter_patients": "👨‍⚕️ From Patients",
+    "filter_visitors": "🧑‍💼 From Visitors",
+    "no_messages": "No messages yet.",
+    "view_details": "👁️",
+    "footer_text": "All rights reserved © 2027 Digital Health Admin, King Abdulaziz Hospital",
+    "footer_supervisor": "Eng. Hani Miyajan",
+    "lang_btn": "English"
+  }
+}
