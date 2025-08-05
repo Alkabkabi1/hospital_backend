@@ -39,8 +39,9 @@ app.use('/api/evaluation', evaluationRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api", require("./routes/checkSession")); // هذا مهم
 app.use("/api", publicRoutes);
-app.use("/api/admin", require("./routes/policies"));
+app.use("/api/admin", require("./routes/admin"));
 app.use("/api/communication", communicationRoutes);
+app.use("/api/admin/policies", require("./routes/policies")); // فقط السياسات
 
 
 // ✅ عرض ملفات الواجهة
