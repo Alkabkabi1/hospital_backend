@@ -26,6 +26,7 @@ const adminRoutes = require("./routes/admin");
 const checkSessionRoutes = require("./routes/checkSession");
 const publicRoutes = require("./routes/publicData");
 const policyRoutes = require("./routes/policies");
+const communicationRoutes = require("./routes/communication");
 
 
 
@@ -39,6 +40,7 @@ app.use("/api/admin", adminRoutes);
 app.use("/api", require("./routes/checkSession")); // هذا مهم
 app.use("/api", publicRoutes);
 app.use("/api/admin", require("./routes/policies"));
+app.use("/api/communication", communicationRoutes);
 
 
 // ✅ عرض ملفات الواجهة
