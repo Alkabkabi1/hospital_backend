@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <title data-key="page_title">لوحة تحكم المدير</title>
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="admin-dashboard.css">
 </head>
+
 <body>
   <header>
     <div class="logo">
@@ -37,8 +39,10 @@
         <h4 data-key="add_policy_title">إضافة سياسة جديدة</h4>
         <form id="policyForm">
           <input type="text" id="policyTitle" placeholder="عنوان السياسة" data-key="policy_title_placeholder" required>
-          <textarea id="policyContent" placeholder="المحتوى الكامل للسياسة" data-key="policy_content_placeholder" required></textarea>
-          <textarea id="policyDescription" placeholder="وصف مختصر للسياسة" data-key="policy_description_placeholder" required></textarea>
+          <textarea id="policyContent" placeholder="المحتوى الكامل للسياسة" data-key="policy_content_placeholder"
+            required></textarea>
+          <textarea id="policyDescription" placeholder="وصف مختصر للسياسة" data-key="policy_description_placeholder"
+            required></textarea>
 
           <select id="policyCategory" required>
             <option value="" data-key="policy_category_label">اختر الفئة</option>
@@ -46,7 +50,8 @@
             <option value="طبية" data-key="policy_category_medical">طبية</option>
           </select>
 
-          <input type="text" id="policyIcon" placeholder="رمز تعبيري أو أيقونة (🩺 👨‍⚕️ ...)" data-key="policy_icon_placeholder" required>
+          <input type="text" id="policyIcon" placeholder="رمز تعبيري أو أيقونة (🩺 👨‍⚕️ ...)"
+            data-key="policy_icon_placeholder" required>
           <input type="text" id="policyPDF" placeholder="رابط ملف PDF" data-key="policy_pdf_placeholder">
           <input type="text" id="policyQR" placeholder="رابط QR إن وجد" data-key="policy_qr_placeholder">
           <input type="date" id="policyDate">
@@ -55,22 +60,26 @@
       </div>
 
       <!-- ✅ إضافة خدمة -->
+      <!-- ✅ إضافة خدمة -->
       <div class="card">
         <h4 data-key="add_service_title">إضافة خدمة</h4>
         <form id="serviceForm">
           <input type="text" id="serviceTitle" placeholder="عنوان الخدمة" data-key="service_title_placeholder" required>
+
           <textarea id="serviceDesc" placeholder="وصف الخدمة" data-key="service_desc_placeholder" required></textarea>
+
           <input type="text" id="serviceLink" placeholder="رابط الخدمة" data-key="service_link_placeholder" required>
 
           <select id="serviceTarget" required>
             <option value="" data-key="service_target_label">اختر الفئة المستهدفة</option>
             <option value="staff" data-key="service_target_staff">خدمة للموظفين</option>
-            <option value="patients" data-key="service_target_patients">خدمة للمرضى</option>
+            <option value="visitor" data-key="service_target_patients">خدمة للمرضى</option>
           </select>
 
           <button type="submit" data-key="service_add_button">➕ إضافة الخدمة</button>
         </form>
       </div>
+
     </div>
   </div>
 
@@ -82,4 +91,5 @@
   <!-- ✅ ربط ملف الجافاسكربت -->
   <script src="admin-dashboard.js"></script>
 </body>
+
 </html>
