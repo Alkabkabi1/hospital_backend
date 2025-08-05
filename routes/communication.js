@@ -21,5 +21,22 @@ router.post("/send-message", (req, res) => {
     res.status(200).json({ message: "✅ تم إرسال الرسالة بنجاح" });
   });
 });
+// ✅ جلب رسائل التواصل (للإدمن فقط)
+router.get("/messages", (req, res) => {
+  const user = req.session?.user;
+
+  if (!user || user.role !== "admin") {
+    return res.status(403).json({ message: "غير مصرح" });
+  }
+
+  const sql = "SELECT * FROM contact_messages ORDER BY created_at DESC";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error("❌ فشل في جلب الرسائل:", err);
+      return res.status(500).json({ message: "حدث خطأ أثناء جلب الرسائل" });
+    }
+    res.json(results);
+  });
+});
 
 module.exports = router;
