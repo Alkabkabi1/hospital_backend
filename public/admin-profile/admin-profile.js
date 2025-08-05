@@ -48,3 +48,50 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// ✅ الترجمة
+    // ======================
+    let currentLang = localStorage.getItem("lang") || (navigator.language.startsWith("en") ? "en" : "ar");
+    let translations = {};
+
+    function toggleLanguage() {
+        currentLang = currentLang === "ar" ? "en" : "ar";
+        localStorage.setItem("lang", currentLang);
+        updateLanguage();
+        updateLangButton();
+    }
+
+    function updateLangButton() {
+        const btnText = document.getElementById("lang-text");
+        if (btnText) {
+            btnText.textContent = currentLang === 'ar' ? 'عربي' : 'English';
+        }
+    }
+
+    function updateLanguage() {
+        document.querySelectorAll("[data-key]").forEach(el => {
+            const key = el.getAttribute("data-key");
+            if (translations[currentLang] && translations[currentLang][key]) {
+                if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+                    el.placeholder = translations[currentLang][key];
+                } else {
+                    el.textContent = translations[currentLang][key];
+                }
+            }
+        });
+        document.documentElement.setAttribute("dir", currentLang === "ar" ? "rtl" : "ltr");
+        document.documentElement.setAttribute("lang", currentLang);
+    }
+
+    fetch("lang-admin-profile.json") // ← اسم ملف الترجمة
+        .then(res => res.json())
+        .then(data => {
+            translations = data;
+            updateLanguage();
+            updateLangButton();
+        })
+        .catch(err => console.error("خطأ في تحميل ملف الترجمة:", err));
+
+    // جعل زر اللغة يعمل
+    window.toggleLanguage = toggleLanguage;
+;
