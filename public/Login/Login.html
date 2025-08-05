@@ -18,12 +18,15 @@
   <!-- ✅ الهيدر: يحتوي على الشعار + زر اللغة + رابط للصفحة الرئيسية -->
   <header class="reset-header">
     <div class="header-logo">
-      <img src="/icon/SB.png" alt="شعار المستشفى">
+      <img src="../icon/SB.png" alt="شعار المستشفى">
       <span>مستشفى الملك عبد العزيز بمكة<br><small>King Abdulaziz Hospital</small></span>
     </div>
     <div class="header-left">
       <!-- ✅ زر تبديل اللغة -->
-      <button class="lang-btn"><i class="fas fa-globe"></i> عربي</button>
+      <button class="header-btn lang-btn" onclick="toggleLanguage()">
+        <i class="fas fa-globe"></i> <span id="lang-text">عربي</span>
+      </button>
+      
 
       <!-- ✅ رابط للعودة إلى الصفحة الرئيسية -->
       <a href="../home/home.html" class="home-link">
