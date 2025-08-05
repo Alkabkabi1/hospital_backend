@@ -88,6 +88,50 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 })
+// ✅ عند الضغط على زر إضافة الخدمة
+document.getElementById("serviceForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  submitService();
+});
+
+// ✅ دالة إرسال بيانات الخدمة
+function submitService() {
+  const title = document.getElementById("serviceTitle").value.trim();
+  const description = document.getElementById("serviceDesc").value.trim();
+  const link = document.getElementById("serviceLink").value.trim();
+  const target = document.getElementById("serviceTarget").value;
+
+  if (!title || !description || !link || !target) {
+    alert("❌ يرجى تعبئة جميع الحقول الخاصة بالخدمة.");
+    return;
+  }
+
+  const payload = {
+    title,
+    description,
+    link
+  };
+
+  console.log("🚀 إرسال الخدمة:", payload);
+
+  fetch(`/api/admin/services?type=${target}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(payload)
+  })
+    .then(res => res.json())
+    .then(data => {
+      alert(data.message || "✅ تمت إضافة الخدمة بنجاح.");
+      document.getElementById("serviceForm").reset();
+    })
+    .catch(err => {
+      console.error("❌ خطأ في إرسال الخدمة:", err);
+      alert("❌ حدث خطأ أثناء إرسال الخدمة.");
+    });
+}
+
 // ✅ إضافة الترجمة
   // ======================
   let currentLang = localStorage.getItem("lang") || (navigator.language.startsWith("en") ? "en" : "ar");
