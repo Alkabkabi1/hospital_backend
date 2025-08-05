@@ -1,0 +1,66 @@
+{
+    "ar": {
+      "page_title": "لوحة تحكم المدير",
+      "home": "الرئيسية",
+      "logout": "تسجيل خروج",
+  
+      "dashboard_title": "لوحة تحكم المدير",
+  
+      "add_policy_title": "إضافة سياسة جديدة",
+      "policy_title_placeholder": "عنوان السياسة",
+      "policy_content_placeholder": "المحتوى الكامل للسياسة",
+      "policy_description_placeholder": "وصف مختصر للسياسة",
+      "policy_category_label": "اختر الفئة",
+      "policy_category_admin": "إدارية",
+      "policy_category_medical": "طبية",
+      "policy_icon_placeholder": "رمز تعبيري أو أيقونة (🩺 👨‍⚕️ ...)",
+      "policy_pdf_placeholder": "رابط ملف PDF",
+      "policy_qr_placeholder": "رابط QR إن وجد",
+      "policy_date_label": "تاريخ السياسة",
+      "policy_add_button": "➕ إضافة السياسة",
+  
+      "add_service_title": "إضافة خدمة",
+      "service_title_placeholder": "عنوان الخدمة",
+      "service_desc_placeholder": "وصف الخدمة",
+      "service_link_placeholder": "رابط الخدمة",
+      "service_target_label": "اختر الفئة المستهدفة",
+      "service_target_staff": "خدمة للموظفين",
+      "service_target_patients": "خدمة للمرضى",
+      "service_add_button": "➕ إضافة الخدمة",
+  
+      "footer_copy": "جميع الحقوق محفوظة © 2027 الإدارة التنفيذية للصحة الرقمية",
+      "footer_supervisor": "م. هاني مياجان"
+    },
+    "en": {
+      "page_title": "Admin Dashboard",
+      "home": "Home",
+      "logout": "Logout",
+  
+      "dashboard_title": "Admin Dashboard",
+  
+      "add_policy_title": "Add New Policy",
+      "policy_title_placeholder": "Policy Title",
+      "policy_content_placeholder": "Full Policy Content",
+      "policy_description_placeholder": "Short Policy Description",
+      "policy_category_label": "Select Category",
+      "policy_category_admin": "Administrative",
+      "policy_category_medical": "Medical",
+      "policy_icon_placeholder": "Emoji or Icon (🩺 👨‍⚕️ ...)",
+      "policy_pdf_placeholder": "PDF File Link",
+      "policy_qr_placeholder": "QR Link (if any)",
+      "policy_date_label": "Policy Date",
+      "policy_add_button": "➕ Add Policy",
+  
+      "add_service_title": "Add Service",
+      "service_title_placeholder": "Service Title",
+      "service_desc_placeholder": "Service Description",
+      "service_link_placeholder": "Service Link",
+      "service_target_label": "Select Target Audience",
+      "service_target_staff": "Staff Service",
+      "service_target_patients": "Patient Service",
+      "service_add_button": "➕ Add Service",
+  
+      "footer_copy": "All rights reserved © 2027 Digital Health Executive Administration",
+      "footer_supervisor": "Eng. Hani Miyajan"
+    }
+  }
