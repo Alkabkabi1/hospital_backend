@@ -12,10 +12,10 @@
 <body>
   <header class="main-header">
     <div class="logo">
-      <img src="/icon/SB.png" alt="شعار المستشفى">
+      <img src="../icon/SB.png" alt="شعار المستشفى">
       <span>
-        <span >مستشفى الملك عبد العزيز بمكة</span><br>
-        <span >King Abdulaziz Hospital</span>
+        <span>مستشفى الملك عبد العزيز بمكة</span><br>
+        <span>King Abdulaziz Hospital</span>
       </span>
     </div>
     <nav class="nav">
@@ -49,12 +49,15 @@
     <h2 class="section-title" data-key="contact_title">تواصل معنا</h2>
     <div class="contact-wrapper">
       <form id="contactForm">
-       <input type="text" name="name" data-key="placeholder_name" placeholder="الاسم الكامل" />
-<input type="email" name="email" data-key="placeholder_email" placeholder="البريد الإلكتروني" />
-<textarea name="message" data-key="placeholder_message" placeholder="رسالتك..."></textarea>
-
+        <input type="text" name="name" data-key="placeholder_name" placeholder="الاسم الكامل" />
+        <input type="email" name="email" data-key="placeholder_email" placeholder="البريد الإلكتروني" />
+        <textarea name="message" data-key="placeholder_message" placeholder="رسالتك..."></textarea>
         <button type="submit" data-key="btn_send">إرسال الرسالة</button>
       </form>
+
+      <!-- ✅ مكان عرض رسالة النجاح/الخطأ -->
+      <p id="formMessage" style="margin-top: 10px; font-weight: bold;"></p>
+
       <div>
         <div class="info-box">
           <div class="info-item"><i class="fas fa-phone"></i><span><b data-key="label_admin">الإدارة العامة:</b> +966‑12‑XXX‑XXXX</span></div>
