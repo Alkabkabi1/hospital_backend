@@ -1,0 +1,20 @@
+{
+    "ar": {
+      "page_title": "ملف المشرف",
+      "home": "الرئيسية",
+      "logout": "تسجيل خروج",
+      "admin_name_placeholder": "اسم المشرف",
+      "admin_email_placeholder": "البريد الإلكتروني",
+      "actions_title": "الإجراءات",
+      "dashboard_button": "⚙️ لوحة التحكم"
+    },
+    "en": {
+      "page_title": "Admin Profile",
+      "home": "Home", 
+      "logout": "Logout",
+      "admin_name_placeholder": "Admin Name",
+      "admin_email_placeholder": "Email Address",
+      "actions_title": "Actions",
+      "dashboard_button": "⚙️ Dashboard"
+    }
+}
