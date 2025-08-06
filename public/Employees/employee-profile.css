@@ -9,7 +9,7 @@
     }
 
     .header-btn {
-      background-color: #2c4952;
+      background-color: #3e69b9;
       color: white;
       padding: 6px 16px;
       border: none;
@@ -71,7 +71,7 @@
 
     .profile p {
       font-size: 14px;
-      color: #888;
+      color: #3e69b9;
       margin-bottom: 1rem;
     }
 
@@ -101,7 +101,7 @@
 
     .summary p {
       font-size: 12px;
-      color: #888;
+      color: #3e69b9;
     }
 
     .summary span {
@@ -168,7 +168,7 @@
     .card.profile button {
       width: 100%;
       margin-top: 10px;
-      background: #2c4952;
+      background: #3e69b9;
       color: white;
       border: none;
       padding: 10px;
