@@ -23,6 +23,8 @@
 
     .logo img {
       height: 100px;
+      border: #ffffff;
+
     }
 
     .logo span {
