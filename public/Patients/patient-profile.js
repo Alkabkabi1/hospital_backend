@@ -14,6 +14,7 @@ fetch("/api/check-session")
     alert("يرجى تسجيل الدخول للوصول إلى الصفحة.");
     window.location.href = "../Login/Login.html";
   });
+document.addEventListener("DOMContentLoaded", loadLanguage);
 
 // ✅ تحميل بيانات المريض عند فتح الصفحة
 window.onload = async () => {
