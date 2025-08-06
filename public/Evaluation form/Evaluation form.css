@@ -1,7 +1,7 @@
 body {
       font-family: 'Cairo', sans-serif;
       background-color: #f9fafb;
-      color: #111827;
+      color: #3e69b9;
       margin: 0;
       padding: 0;
       direction: rtl;
@@ -29,7 +29,7 @@ body {
 
     .lang-btn {
       font-size: 1rem;
-      background-color: #2f4553;
+      background-color: #3e69b9;
       color: white;
       padding: 0.3rem 0.8rem;
       border: none;
@@ -40,7 +40,7 @@ body {
     .back-arrow {
       font-size: 1.3rem;
       text-decoration: none;
-      color: #374151;
+      color: #3e69b9;
       padding: 0.3rem 0.7rem;
       border-radius: 6px;
       transition: 0.2s;
@@ -65,7 +65,7 @@ body {
       border-radius: 8px;
       font-size: 0.9rem;
       margin-bottom: 2rem;
-      color: #374151;
+      color: #3e69b9;
       text-align: center;
     }
 
@@ -103,7 +103,7 @@ body {
 
     .submit-btn {
       margin-top: 2rem;
-      background-color: #2f4553;
+      background-color: #3e69b9;
       color: white;
       padding: 0.7rem 1.5rem;
       border: none;
@@ -114,7 +114,7 @@ body {
     }
 
     .submit-btn:hover {
-      background-color: #243843;
+      background-color: #3e69b9;
     }
 
     .note {
