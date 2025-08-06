@@ -16,7 +16,7 @@ body {
     header nav a {
       margin: 0 10px;
       text-decoration: none;
-      color: #3e69b9;
+      color: #333;
       font-weight: bold;
     }
     /* ==========  الهيدر ========== */
@@ -41,8 +41,9 @@ body {
   }
   
   .logo img {
-    width: 100px;
+    width: px;
     height: 100px;
+    border: #ffffff;
   }
   
   .logo span {
@@ -68,13 +69,13 @@ body {
   .nav ul li a {
     display: block;
     text-decoration: none;
-    color: #3e69b9;
+    color: #333;
     font-size: 20px;;
     padding: 20px 25px;
   }
   
   .nav ul li a:hover {
-    color: #007B8F;
+    color: #3e69b9;
   }
   
   /* القوائم المنسدلة */
@@ -89,7 +90,7 @@ body {
       display:block;
       margin: 0;
       padding: 15px 15px;
-      color: #3e69b9;
+      color: #333;
       text-decoration:none;
       text-align:center;
       font-size: 16px;
