@@ -45,7 +45,7 @@
   }
   
   .logo img {
-    width: 100px;
+    width: px;
     height: 100px;
   }
   
@@ -69,7 +69,7 @@
   }
   
   .nav ul li a:hover {
-    color: #007B8F;
+    color: #3e69b9;
   }
   
   /* القوائم المنسدلة */
@@ -119,14 +119,14 @@
     padding: 6px 12px;
     border: none;
     border-radius: 5px;
-    background-color: #2c4952;
+    background-color: #3e69b9;
     color: white;
     font-weight: bold;
     cursor: pointer;
   }
   
   .header-actions .lang-btn {
-    background-color: #2c4952;
+    background-color: #3e69b9;
     color: white;
   }
 
@@ -143,13 +143,13 @@
     .doctor-card h3 { margin:10px 0 5px; }
     .doctor-card .title { font-weight:bold; color:#333; margin-bottom:8px; }
     .doctor-card .desc { font-size:14px; color:#555; min-height:45px; }
-    .more-btn { margin-top:15px; padding:8px 20px; background-color:#375a66; color:#fff; border:none; border-radius:5px; text-decoration:none; display:inline-block; }
+    .more-btn { margin-top:15px; padding:8px 20px; background-color:#3e69b9; color:#fff; border:none; border-radius:5px; text-decoration:none; display:inline-block; }
     .nav-btn { position:absolute; top:50%; transform:translateY(-50%); background:#fff; border:1px solid #ccc; border-radius:50%; width:35px; height:35px; cursor:pointer; z-index:2; }
     .nav-btn.left { left:10px; }
     .nav-btn.right { right:10px; }
 
     .footer {
-    background-color: #1f3d47;
+    background-color: #3e69b9;
     color: white;
     padding: 40px 50px;
     display: grid;
