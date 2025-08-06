@@ -26,6 +26,7 @@
     .logo span {
       font-size: 18px;
       font-weight: bold;
+
     }
 
     .header-logo small {
@@ -143,7 +144,7 @@
       font-size: 13px;
     }
     .policies .item a {
-      color: #2c4952;
+      color: #3e69b9;
       text-decoration: none;
       font-weight: bold;
       display: flex;
