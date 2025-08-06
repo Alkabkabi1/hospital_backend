@@ -1,6 +1,14 @@
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+}
 
-body { background: #f9fafb; direction: rtl; }
+body {
+  background: #f9fafb;
+  direction: rtl;
+}
 
 header {
   display: flex;
@@ -18,7 +26,8 @@ header {
 }
 
 .logo img {
-  height: 80px;
+  height: 100px;
+  border: #ffffff;
 }
 
 .logo span {
