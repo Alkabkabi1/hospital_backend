@@ -41,7 +41,7 @@ body {
   }
   
   .logo img {
-    width: 100px;
+    width: px;
     height: 100px;
   }
   
@@ -74,7 +74,7 @@ body {
   }
   
   .nav ul li a:hover {
-    color: #007B8F;
+    color: #3e69b9;
   }
   
   /* القوائم المنسدلة */
@@ -124,14 +124,14 @@ body {
     padding: 6px 12px;
     border: none;
     border-radius: 5px;
-    background-color: #2c4952;
+    background-color: #3e69b9;
     color: white;
     font-weight: bold;
     cursor: pointer;
   }
   
   .header-actions .lang-btn {
-    background-color: #2c4952;
+    background-color: #3e69b9;
     color: white;
   }
 
@@ -189,7 +189,7 @@ body {
 }
 .slider-dots span.active {
   opacity: 1;
-  background: #00A2B8;
+  background: #3e69b9;
 }
 
 /* ✅   اخبار */
@@ -235,7 +235,7 @@ body {
 .news-text .read-btn {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #007B8F;
+  background-color: #3e69b9;
   color: white;
   border: none;
   border-radius: 6px;
@@ -272,7 +272,7 @@ body {
 }
 
 .news-dots span.active {
-  background-color: #007B8F;
+  background-color: #3e69b9;
   opacity: 1;
 }
 
@@ -330,7 +330,7 @@ body {
 
 .go-btn {
   padding: 10px 20px;
-  background-color: #007B8F;
+  background-color: #3e69b9;
   color: white;
   border: none;
   border-radius: 6px;
@@ -368,7 +368,7 @@ body {
 
 .stat-card .icon {
   font-size: 32px;
-  color: #007B8F;
+  color: #3e69b9;
   margin-bottom: 15px;
 }
 
@@ -387,7 +387,7 @@ body {
 /* ✅ فوتر    */
 
     .footer {
-    background-color: #1f3d47;
+    background-color: #3e69b9;
     color: white;
     padding: 40px 50px;
     display: grid;
