@@ -1,31 +1,3 @@
-console.log("🔍 Checking session...");
-
-// ✅ حماية الصفحة للمريض فقط + إخفاء خدمات الموظفين
-fetch("/api/user-info")
-  .then(res => {
-    if (!res.ok) throw new Error("غير مصرح");
-    return res.json();
-  })
-  .then(user => {
-    if (user.role !== "patient") {
-      window.location.href = "/Login/Login.html";
-    } else {
-      // ✅ إخفاء كل العناصر المتعلقة بخدمات الموظفين
-      const staffElements = document.querySelectorAll("[data-key='staff_services']");
-      staffElements.forEach((el) => {
-        const card = el.closest(".access-card");
-        const menuItem = el.closest("li");
-        if (card) card.remove();       // من الوصول السريع
-        else if (menuItem) menuItem.remove(); // من القائمة المنسدلة
-      });
-    }
-  })
-  .catch(err => {
-    console.error("🚫 حماية الصفحة:", err);
-    window.location.href = "/Login/Login.html";
-  });
-
-
 // ✅ السلايدر الرئيسي
 const slides = document.querySelectorAll('.hero-slide');
 const dotsContainer = document.getElementById('dots');
